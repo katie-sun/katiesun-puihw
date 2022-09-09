@@ -6,27 +6,27 @@
 
 /* image formatting */
 .donut-flavor {
-  width: 300px;
+  width: 295px;
   border: 3px solid black;
   margin-bottom: -15px;
   justify-content: center;
 }
 
 .donut-flavor-static {
-    width: 100%;
-    border: 3px solid black;
-    margin-bottom: -15px;
-    align-content: center;
+	width: 100%;
+	border: 3px solid black;
+	margin-bottom: -15px;
+	align-content: center;
   }
 /* nav link formatting */
 .header{
-    font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 24px;
-    text-align: center;
-    color: black
+	font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 24px;
+	text-align: center;
+	color: black
 }
 
-.highlights {
+.highlights{
   background-color: yellow;
 }
 
@@ -66,17 +66,7 @@
   align-content: center;
 }
 
-/* font & spacing styles */
-h5 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
-  font-weight: lighter;
-  text-decoration: underline;
-  color: black;
-  margin-top: 15px;
-  text-align: center;
-}
-
+/* font styles */
 .nounderline {
   text-decoration: none;
   color: black;
@@ -91,6 +81,7 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* subheader font*/
 h2 {
   font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: lighter;
@@ -98,37 +89,59 @@ h2 {
   text-align: center;
 }
 
+/* item + price size font */
 h3{
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: lighter;
-    font-size: 24px;
-    color: black; 
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: lighter;
+	font-size: 24px;
+	color: black; 
 }
-  
+
+/* remove font */
+h5 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  text-decoration: underline;
+  color: black;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* spacing formatting */
 .itemtitle {
-    margin-bottom: -20px;
+	margin-bottom: -20px;
 }
   
 .itemprice {
-    margin-bottom: 40px;
+	margin-bottom: 40px;
 }
   
 .sc_itemtitle {
-    margin-bottom: -20px;
-    text-align: center;
+	margin-bottom: -20px;
+	text-align: center;
 }
   
 .sc_itemprice {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 30px;
-    margin-top: 50px;
-    margin-bottom: 80px;
-    text-align: center;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 30px;
+	margin-top: 50px;
+	margin-bottom: 80px;
+	text-align: center;
 }
   
 #spacing {
-    margin-top: 25px;
-    margin-bottom: 18px;
+	margin-top: 25px;
+	margin-bottom: 18px;
+}
+
+#sc-spacing {
+	margin-top: 32px;
+}
+
+#changefont{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
 }
 
 /* line formatting */
@@ -161,40 +174,40 @@ hr {
 
 /* dropdown formatting */
 .dropdown{
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 1px;
-    font-size: 20px;
-    padding: 7px;
-    color: black;
-    margin-bottom: -20px;
-    margin-top:-15px;
-    width: 100%
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 20px;
+	padding: 7px;
+	color: black;
+	margin-bottom: -20px;
+	margin-top:-15px;
+	width: 100%
 }
 
+/* add to cart 'button' formatting */
 .addcartbox{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 35%;
-    padding: 8px 35px;
-    margin-left: 30px;
-    border: 3px solid black;
-    text-align: center;
-    background-color: yellow;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	width: 35%;
+	padding: 8px 35px;
+	margin-left: 30px;
+	border: 3px solid black;
+	text-align: center;
+	background-color: yellow;
 }
 
 .addtocart{
-    display: flex;
-    justify-content: right;
-    width: 100%;
+	display: flex;
+	justify-content: right;
+	width: 100%;
 }
 
+/* hover formatting */
 .hover:hover{
-    background-color: yellow;
-    padding-left: 2px;
-    padding-right: 3px;
-    padding-top: 3px;
+	background-color: yellow;
+	border-top: 4px solid yellow;
+	border-left: 4px solid yellow;
+	border-right: 3px solid yellow;
+	margin-top: -4px;
+	margin-left: -4px;
+	margin-right: -4px;
 }
 
-#changefont{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
-}
