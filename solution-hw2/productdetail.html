@@ -7,33 +7,47 @@
   </head>
 
   <body>
-    <!-- logo -->
-    <a href="index.html">
-      <img id="logo" src="./Assets/hw-1-assets/logo-01.svg" alt="Donut doodled logo with Bun Bun bake shop text"/>
-    </a>
+	<div id="pageborder">
+    <div id="nav">
+        <div id="flexboxtop_logo">
+            <!-- logo -->
+            <a href="index.html">
+                <img id="logo" src="./Assets/hw-1-assets/logo-01.svg" alt="Donut doodled logo with Bun Bun bake shop text"/>
+            </a>
+        </div>
 
-    <hr/>
+        <div id="flexboxtop">
+        <!-- header section w/nav -->
+            <div class="header">
+                <a href="index.html" class="nounderline">
+                    <h4 id="topmargin"><span class="highlights">PRODUCTS</span></h4>
+                </a>
+                <a href="shoppingcart.html" class="nounderline">
+                    <p><span class="margins">CART</span></p>
+                </a>
+            </div>
 
-    <!-- header section w/nav -->
-    <div class="header">
-      <a href="index.html" class="nounderline">
-        <h4><span class=highlights>PRODUCTS</span></h4></a>
-      <a href="shoppingcart.html" class="nounderline"><p>CART</p></a>
-      <br/>
-      <h2>Original cinnamon roll</h2>
+            <div>
+                <hr />
+            </div>
+
+            <div id="pagetitle">
+                <h2>Original cinnamon roll</h2>
+            </div>
+        </div>
     </div>
 
 		<!-- item description image-->
     <div class="description-gallery">
-      <a href="productdetail.html" class="underlinestyle">
+      <div class="description-image">
+				<a href="productdetail.html" class="underlinestyle">
         <img class="donut-flavor-static" src="./Assets/hw-1-assets/original-cinnamon-roll.jpeg" alt="original cinnamon roll next to cinnamon sticks"/></a>
-
+			</div>
 
 			<!-- customization section-->
       <div class="customization-gallery">
         <br/>
         <h3>Customize our delicious, hand-made cinnamon roll to your liking!</h3>
-        <br/>
         <br/>
         <h3>Glazing:</h3>
         <select name="Keep original" class="dropdown">
@@ -67,5 +81,6 @@
       <br/>
 		<!-- close out specific item div -->
     </div>
+	</div>
   </body>
 </html>
