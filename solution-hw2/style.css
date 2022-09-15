@@ -1,15 +1,31 @@
+#pageborder{
+	border: 1px solid black;
+}
+
+
 #logo {
-  width: 350px;
+  width: 380px;
   margin-left: 30px;
   margin-top: 30px;
+	margin-right: -40px;
 }
 
 /* image formatting */
 .donut-flavor {
-  width: 295px;
+  width: 294px;
   border: 3px solid black;
   margin-bottom: -15px;
   justify-content: center;
+	flex: 1;
+}
+
+.card{
+	width: 300px;
+}
+
+.itemspacing {
+	margin-left: 40px;
+	margin-right: 40px;
 }
 
 .donut-flavor-static {
@@ -18,24 +34,80 @@
 	margin-bottom: -15px;
 	align-content: center;
   }
+
+
 /* nav link formatting */
+#nav{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	/* align-items:flex-start; */
+	flex-wrap: wrap;
+	/* flex: 3; */
+	margin-bottom: 70px;
+}
+#flexboxtop_logo{
+	display:flex;
+	flex-wrap: wrap;
+	flex-grow: 1;
+	justify-content: flex-start;
+}
+
+#flexboxtop{
+	/* display:flex; */
+	/* flex-wrap: wrap;
+	justify-content: flex-end; */
+	flex-grow: 4;
+}
+
+.margins{
+	margin-left: 90px;
+}
+
+#topmargin{
+	margin-top: 28px;
+}
+
 .header{
 	font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 24px;
+	font-size: 28px;
 	text-align: center;
-	color: black
+	color: black;
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 80px;
+	margin-top: 30px;
 }
 
 .highlights{
   background-color: yellow;
 }
 
+#pagetitle {
+	display: flex;
+	/* flex-grow: 1; */
+	justify-content: flex-start;
+	margin-top: 20px;
+
+}
+
 /* div formatting */
 .gallery {
-  margin-left: auto;
+  display: flex;
+	flex-direction: column;
+	margin-left: auto;
   margin-right: auto;
-  width: 300px;
-  align-content: center;
+  width: 100%;
+  align-items: center;
+	justify-content: space-around;
+	align-content: center;
+	row-gap: 15px;
+}
+
+.row{
+	display: flex;
+	flex: 1;
+	flex-wrap: wrap;
 }
 
 .sc-gallery {
@@ -147,6 +219,7 @@ h5 {
 /* line formatting */
 hr {
   height: 2px;
+	width: 100%;
   background-color: black;
   margin-bottom: -10px;
 }
@@ -201,13 +274,14 @@ hr {
 }
 
 /* hover formatting */
-.hover:hover{
+.turnyellow:hover{
+	/* width: 300px; */
 	background-color: yellow;
 	border-top: 4px solid yellow;
-	border-left: 4px solid yellow;
+	border-left: 3px solid yellow;
 	border-right: 3px solid yellow;
 	margin-top: -4px;
-	margin-left: -4px;
-	margin-right: -4px;
+	margin-left: -3px;
+	margin-right: -3px;
 }
 
