@@ -9,21 +9,6 @@
   margin-right: 50px;
 }
 
-@media only screen and (max-width: 700px) {
-  .gallery{
-    margin-right: 10px;
-    margin-left: -100px;
-    flex-grow: 2;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .nav{
-    flex-direction: column;
-  }
-}
-
-
 /* gallery image formatting */
 .donut-flavor {
   width: 294px;
@@ -124,8 +109,7 @@
 /*shopping cart flexbox formatting */
 .sc-gallery {
 	margin-top: 100px;
-	margin-left: 450px;
-  /* margin-right: 50px; */
+	margin-left: 460px;
   width: auto;
   align-content: flex-start;
 	display:flex;
@@ -340,3 +324,10 @@ hr {
 	margin-right: -3px;
 }
 
+@media only screen and (max-width: 700px) {
+  .gallery{
+    margin-right: 10px;
+    margin-left: -100px;
+    flex-grow: 2;
+  }
+}
