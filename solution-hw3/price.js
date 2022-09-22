@@ -52,41 +52,39 @@ const basePrice = 2.49;
 let glazingPrice = 0.00;
 let packSize = 1;
 let packPrice = 1;
-let totalPrice = 2.49;
 
 function glazingChange(element) {
   // get value of selected glazing option
   const priceChange = element.value;
-  console.log(priceChange);
+  console.log('currently selected item:' + priceChange);
 
   //retrieve glaze object corresponding to the selected option
   for (let i =0; i<glazesnPrices.length; i++){
     if (glazesnPrices[i].glazingOptions == element.value){
-      console.log('fucking hell');
+      console.log('the type of glaze:');
       console.log(glazesnPrices[i].glazingOptions);
       glazingPrice = glazesnPrices[i].glazingPrice;
+      console.log('the price adaption:');
       console.log(glazingPrice);
-      console.log(basePrice);
-      console.log(totalPrice);
     }
   }
 
   //retrieve pack size object corresponding to the selected option
   for (let i =0; i<packSizes.length; i++){
-    if (packSizes[i].glazingOptions == element.value){
-      console.log('fucking hell packsize');
+    if (packSizes[i].packSize == element.value){
+      console.log('pack size:' + packSizes[i].packSize);
       packPrice = packSizes[i].packPrice;
-      console.log(packPrice);
+      console.log('multiply by:' + packPrice);
     }
   }
 
   //when will it run? move it into the function  
   totalPrice = (basePrice + glazingPrice) * packPrice;
+  console.log(totalPrice.toFixed(2));
 
   //update total price according to the change
   // document.getElementById("changefont").innerHTML = ("$" + totalPrice);
-  document.getElementsById("#totalprice").innerHTML = ("$" + totalPrice);
-  //id = changefont
+  document.getElementById("totalprice").innerHTML = ('$' + totalPrice.toFixed(2));
 
   
 }
