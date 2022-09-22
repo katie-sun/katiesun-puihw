@@ -243,6 +243,18 @@ h5 {
 	margin-top: 28px;
 }
 
+.detail-topmargin{
+	margin-top: 43px;
+}
+
+#detail-glazingtopmargin{
+  margin-top: 65px;
+}
+
+#addtocart-topmargin{
+  margin-top: 90px;
+}
+
 /* line formatting */
 hr {
   height: 2px;
