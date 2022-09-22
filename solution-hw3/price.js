@@ -53,16 +53,23 @@ let glazingPrice = 0.00;
 let packSize = 1;
 let packPrice = 1;
 
+//function to trigger price update based on user selections in the drop down
 function glazingChange(element) {
   // get value of selected glazing option
   const priceChange = element.value;
   console.log('currently selected item:' + priceChange);
 
   //retrieve glaze object corresponding to the selected option
-  for (let i =0; i<glazesnPrices.length; i++){
-    if (glazesnPrices[i].glazingOptions == element.value){
+  
+  //loop through array
+  for (let i =0; i<glazesnPrices.length; i++){     
+
+    //find out if item in dropdown selection equals item in array
+    if (glazesnPrices[i].glazingOptions == element.value){ 
       console.log('the type of glaze:');
       console.log(glazesnPrices[i].glazingOptions);
+
+      //if so, set glazingPrice variable to price addition
       glazingPrice = glazesnPrices[i].glazingPrice;
       console.log('the price adaption:');
       console.log(glazingPrice);
@@ -78,12 +85,11 @@ function glazingChange(element) {
     }
   }
 
-  //when will it run? move it into the function  
+  //calculate total price based on glaze selection + quantity
   totalPrice = (basePrice + glazingPrice) * packPrice;
   console.log(totalPrice.toFixed(2));
 
   //update total price according to the change
-  // document.getElementById("changefont").innerHTML = ("$" + totalPrice);
   document.getElementById("totalprice").innerHTML = ('$' + totalPrice.toFixed(2));
 
   
