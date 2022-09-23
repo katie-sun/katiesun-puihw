@@ -19,7 +19,7 @@ let packInfo = [
 //update option using for loop w/.js
 
 // When the page loads, find the Glaze select element.
-let selectglaze = document.querySelector("#glazes");
+let selectGlaze = document.querySelector("#glazes");
 for (let i = 0; i < glazeInfo.length; i++){
   // create HTML element
   const option = document.createElement('option');
@@ -28,12 +28,12 @@ for (let i = 0; i < glazeInfo.length; i++){
   // update blank HTML w/type of glaze 
   option.innerHTML = glazeInfo[i].glazingOptions;
   // append to HTML element
-  selectglaze.appendChild(option);
+  selectGlaze.appendChild(option);
 }
 
 
 // When the page loads, find the Pack Size select element.
-let selectpacksize = document.querySelector("#packsizes");
+let selectPackSize = document.querySelector("#packsizes");
 for (let i = 0; i < packInfo.length; i++){
   // create HTML element
   const option = document.createElement('option');
@@ -42,7 +42,7 @@ for (let i = 0; i < packInfo.length; i++){
   // update blank HTML w/pack size
   option.innerHTML = packInfo[i].packSize;
   // append to pack size dropdown
-  selectpacksize.appendChild(option);
+  selectPackSize.appendChild(option);
 }
 
 // Set constants + variables
