@@ -1,5 +1,3 @@
-//variables to store what the last selection is?
-
 //set up arrays
 
 //glazes and prices array
@@ -57,7 +55,6 @@ let packPrice = 1;
 function glazingChange(element) {
   // get value of selected glazing option
   const priceChange = element.value;
-  console.log('currently selected item:' + priceChange);
 
   //retrieve glaze object corresponding to the selected option
   
@@ -66,28 +63,21 @@ function glazingChange(element) {
 
     //find out if item in dropdown selection equals item in array
     if (glazesnPrices[i].glazingOptions == element.value){ 
-      console.log('the type of glaze:');
-      console.log(glazesnPrices[i].glazingOptions);
 
       //if so, set glazingPrice variable to price addition
       glazingPrice = glazesnPrices[i].glazingPrice;
-      console.log('the price adaption:');
-      console.log(glazingPrice);
     }
   }
 
   //retrieve pack size object corresponding to the selected option
   for (let i =0; i<packSizes.length; i++){
     if (packSizes[i].packSize == element.value){
-      console.log('pack size:' + packSizes[i].packSize);
       packPrice = packSizes[i].packPrice;
-      console.log('multiply by:' + packPrice);
     }
   }
 
   //calculate total price based on glaze selection + quantity
   totalPrice = (basePrice + glazingPrice) * packPrice;
-  console.log(totalPrice.toFixed(2));
 
   //update total price according to the change
   document.getElementById("totalprice").innerHTML = ('$' + totalPrice.toFixed(2));
