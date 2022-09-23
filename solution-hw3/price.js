@@ -1,7 +1,7 @@
 //set up arrays
 
 //glazes and prices array
-let glazesnPrices = [
+let glazeInfo = [
   {glazingOptions:"Keep Original", glazingPrice: 0.00},
   {glazingOptions:"Sugar Milk", glazingPrice: 0.00},
   {glazingOptions:"Vanilla Milk", glazingPrice: 0.50},
@@ -9,7 +9,7 @@ let glazesnPrices = [
 ]
 
 //pack sizes and prices array
-let packSizes = [
+let packInfo = [
   {packSize:"1", packPrice: 1},
   {packSize:"3", packPrice: 3},
   {packSize:"6", packPrice: 5},
@@ -20,13 +20,13 @@ let packSizes = [
 
 // When the page loads, find the Glaze select element.
 let selectglaze = document.querySelector("#glazes");
-for (let i = 0; i < glazesnPrices.length; i++){
+for (let i = 0; i < glazeInfo.length; i++){
   // create HTML element
   var option = document.createElement('option');
   // access value in array
-  option.value = glazesnPrices[i].glazingOptions;
+  option.value = glazeInfo[i].glazingOptions;
   // update blank HTML w/type of glaze 
-  option.innerHTML = glazesnPrices[i].glazingOptions;
+  option.innerHTML = glazeInfo[i].glazingOptions;
   // append to HTML element
   selectglaze.appendChild(option);
 }
@@ -34,13 +34,13 @@ for (let i = 0; i < glazesnPrices.length; i++){
 
 // When the page loads, find the Pack Size select element.
 let selectpacksize = document.querySelector("#packsizes");
-for (let i = 0; i < packSizes.length; i++){
+for (let i = 0; i < packInfo.length; i++){
   // create HTML element
   const option = document.createElement('option');
   // access value at array 
-  option.value = packSizes[i].packSize;
+  option.value = packInfo[i].packSize;
   // update blank HTML w/pack size
-  option.innerHTML = packSizes[i].packSize;
+  option.innerHTML = packInfo[i].packSize;
   // append to pack size dropdown
   selectpacksize.appendChild(option);
 }
@@ -59,20 +59,20 @@ function glazingChange(element) {
   //retrieve glaze object corresponding to the selected option
   
   //loop through array
-  for (let i =0; i<glazesnPrices.length; i++){     
+  for (let i =0; i<glazeInfo.length; i++){     
 
     //find out if item in dropdown selection equals item in array
-    if (glazesnPrices[i].glazingOptions == element.value){ 
+    if (glazeInfo[i].glazingOptions == element.value){ 
 
       //if so, set glazingPrice variable to price addition
-      glazingPrice = glazesnPrices[i].glazingPrice;
+      glazingPrice = glazeInfo[i].glazingPrice;
     }
   }
 
   //retrieve pack size object corresponding to the selected option
-  for (let i =0; i<packSizes.length; i++){
-    if (packSizes[i].packSize == element.value){
-      packPrice = packSizes[i].packPrice;
+  for (let i =0; i<packInfo.length; i++){
+    if (packInfo[i].packSize == element.value){
+      packPrice = packInfo[i].packPrice;
     }
   }
 
