@@ -22,7 +22,7 @@ let packInfo = [
 let selectglaze = document.querySelector("#glazes");
 for (let i = 0; i < glazeInfo.length; i++){
   // create HTML element
-  var option = document.createElement('option');
+  const option = document.createElement('option');
   // access value in array
   option.value = glazeInfo[i].glazingOptions;
   // update blank HTML w/type of glaze 
