@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bun Bun Bake Shop</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+  </head>
+
+  <body>
+	<div id="pageborder">
+    <div id="nav">
+			<div id="flexboxtop_logo">
+				<!-- logo -->
+				<a href="index.html">
+					<img id="logo" src="./Assets/hw-1-assets/logo-01.svg" alt="Donut doodled logo with Bun Bun bake shop text"/>
+				</a>
+			</div>
+
+			<div id="flexboxtop">
+				<!-- header section w/nav -->
+				<div class="header">
+					<a href="index.html" class="nounderline">
+						<h4 id="topmargin"><span class="highlights">PRODUCTS</span></h4>
+					</a>
+					<a href="shoppingcart.html" class="nounderline">
+						<p><span class="margins">CART</span></p>
+					</a>
+				</div>
+
+				<div>
+					<hr />
+				</div>
+
+				<div>
+					<h2 id="pagetitle"></h2>
+				</div>
+
+			</div>
+    </div>
+
+		<!-- item description gallery-->
+    <div class="description-gallery">
+			<!-- item description image-->
+      <div class="description-image">
+				<a href="productdetail.html" class="underlinestyle">
+        <img class="donut-flavor-static" src="./Assets/hw-1-assets/original-cinnamon-roll.jpeg" alt="original cinnamon roll next to cinnamon sticks"/></a>
+			</div>
+
+			<!-- customization section-->
+      <div class="customization-gallery">
+
+        <h3 class="detail-topmargin">Customize our delicious, hand-made cinnamon roll to your liking!</h3>
+
+        <h3 id="detail-glazingtopmargin">Glazing:</h3>
+        <select name="Keep original" class="dropdown" id="glazes" onchange="glazingChange(this)"> <!-- on change, run glazingChange function to reflect selection-->
+        </select>
+
+        <h3 class="detail-topmargin">Pack size:</h3>
+        <select name="Pack size" class="dropdown" id="packsizes" onchange="glazingChange(this)"> <!-- on change, run glazingChange function to reflect selection-->
+        </select>
+
+				<!-- price and add to cart button -->
+        <div class="addtocart" id="addtocart-topmargin">
+					<p id="totalprice">$2.49</p><p><span class="addcartbox">Add to Cart</span></p>
+        </div>
+				
+      <!-- close out customization formatting div -->
+			</div>
+
+		<!-- close out specific item div -->
+    </div>
+
+	</div>
+
+  <script type="text/javascript" src="price.js"></script>
+  <script type="text/javascript" src="rollsData.js"></script>
+
+  </body>
+</html>
