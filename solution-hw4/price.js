@@ -85,31 +85,42 @@ function glazingChange(element) {
   
 }
 
+cart = [];
 
-//Updating productdetail page with roll data
+//Parse the URL parameter and store the current roll type as a variable
 
-// First, we get the query string from the URL. This is the list of parameters
-// that begins with a question mark. (These are known as "search parameters")
+// get the query string from the URL (search parameters)
 const queryString = window.location.search;
 console.log(queryString);
 
-// Then, we use the query string to create a URLSearchParams object:
+// use the query string to create a URLSearchParams object
 const params = new URLSearchParams(queryString);
 console.log('params: ' + params);
 
-// Finally, we can access the parameter we want using the "get" method:
+// access the parameter we want using the "get" method (e.g. stuff after roll=)
 const chosenRoll = params.get('roll');
 
 console.log('chosenRoll: ' + chosenRoll);
 
-/* ------------------------------------------------------------------------- */
+//variable = chosenRoll (which is storing the current roll type as a variable)
 
-// Use the URL parameter to update our page.
 
-// Update the header text
-let headerElement = document.querySelector('#pagetitle');
-headerElement.innerText = chosenRoll + ' cinnamon roll'
 
-// Update the image
-let rollImage = document.querySelector('.donut-flavor-static');
-rollImage.src = './Assets/hw-1-assets/' + chosenRoll + '-cinnamon-roll.jpeg';
+// Use the URL parameter to update page
+
+const rollName = chosenRoll + ' cinnamon roll';
+const rollBasePrice = rolls[chosenRoll].basePrice;
+const rollImage = './Assets/hw-1-assets/' + rolls[chosenRoll].imageFile;
+
+console.log(rollName);
+console.log(rollBasePrice);
+console.log(rollImage);
+
+//update roll name
+document.querySelector('#pagetitle').innerText = rollName;
+
+//update roll price
+document.querySelector('#totalprice').innerText = rollBasePrice;
+
+//update roll image link
+document.querySelector('.donut-flavor-static').src = rollImage;
