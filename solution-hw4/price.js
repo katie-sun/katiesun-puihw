@@ -46,7 +46,7 @@ for (let i = 0; i < packInfo.length; i++){
 }
 
 // Set constants + variables
-const basePrice = 2.49;
+let basePrice = 2.49;
 let glazingPrice = 0.00;
 let packSize = 1;
 let packPrice = 1;
@@ -124,3 +124,26 @@ document.querySelector('#totalprice').innerText = rollBasePrice;
 
 //update roll image link
 document.querySelector('.donut-flavor-static').src = rollImage;
+
+//update base price variable
+basePrice = rollBasePrice; 
+
+//Add to cart class
+class Roll{
+  constructor(rollType, rollGlazing, packSize, basePrice) {
+    this.type = rollType;
+    this.glazing = rollGlazing;
+    this.size = packSize;
+    this.basePrice = basePrice;
+  }
+}
+
+function addToCart(){
+  
+}
+
+
+
+  // eventlistener (on click)= add to cart
+  // add instance to array cart
+  // print entire cart array after every time you add items using console.log()
