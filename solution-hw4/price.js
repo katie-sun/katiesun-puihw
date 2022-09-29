@@ -122,7 +122,7 @@ basePrice = rollBasePrice;
 
 //Add to cart class
 class Roll{
-  constructor(rollName, rollGlazing, packSize, basePrice) {
+  constructor(chosenRoll, rollGlazing, packSize, basePrice) {
     this.type = chosenRoll;
     this.glazing = rollGlazing;
     this.size = packSize;
