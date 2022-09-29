@@ -91,16 +91,12 @@ cart = [];
 
 // get the query string from the URL 
 const queryString = window.location.search;
-console.log(queryString);
 
 // use the query string to create a URLSearchParams object
 const params = new URLSearchParams(queryString);
-console.log('params: ' + params);
 
 // access the parameter we want using the "get" method (e.g. stuff after roll=)
 const chosenRoll = params.get('roll');
-
-console.log('chosenRoll: ' + chosenRoll);
 
 //variable = chosenRoll (which is storing the current roll type as a variable)
 
@@ -111,10 +107,6 @@ console.log('chosenRoll: ' + chosenRoll);
 const rollName = chosenRoll + ' cinnamon roll';
 const rollBasePrice = rolls[chosenRoll].basePrice;
 const rollImage = './Assets/hw-1-assets/' + rolls[chosenRoll].imageFile;
-
-console.log(rollName);
-console.log(rollBasePrice);
-console.log(rollImage);
 
 //update roll name
 document.querySelector('#pagetitle').innerText = rollName;
@@ -139,17 +131,9 @@ class Roll{
 }
 
 function addToCart(){
-
-  //Print glazing, pack size, and base price of selection
-  console.log('Roll name: ' + chosenRoll);
-  console.log('Glazing: ' + selectGlaze.value);
-  console.log('pack Size:' + selectPackSize.value);
-  console.log('Base Price: ' + basePrice);
   
   //Append to empty cart array
   let customRoll = new Roll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
-  console.log('testing');
-  console.log(customRoll);
   cart.push(customRoll);
   
   console.log(cart);  
