@@ -89,7 +89,7 @@ cart = [];
 
 //Parse the URL parameter and store the current roll type as a variable
 
-// get the query string from the URL (search parameters)
+// get the query string from the URL 
 const queryString = window.location.search;
 console.log(queryString);
 
@@ -130,8 +130,8 @@ basePrice = rollBasePrice;
 
 //Add to cart class
 class Roll{
-  constructor(rollType, rollGlazing, packSize, basePrice) {
-    this.type = rollType;
+  constructor(rollName, rollGlazing, packSize, basePrice) {
+    this.type = chosenRoll;
     this.glazing = rollGlazing;
     this.size = packSize;
     this.basePrice = basePrice;
@@ -139,11 +139,18 @@ class Roll{
 }
 
 function addToCart(){
+
+  //Print glazing, pack size, and base price of selection
+  console.log('Roll name: ' + chosenRoll);
+  console.log('Glazing: ' + selectGlaze.value);
+  console.log('pack Size:' + selectPackSize.value);
+  console.log('Base Price: ' + basePrice);
   
+  //Append to empty cart array
+  let customRoll = new Roll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
+  console.log('testing');
+  console.log(customRoll);
+  cart.push(customRoll);
+  
+  console.log(cart);  
 }
-
-
-
-  // eventlistener (on click)= add to cart
-  // add instance to array cart
-  // print entire cart array after every time you add items using console.log()
