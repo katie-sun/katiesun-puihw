@@ -297,7 +297,7 @@ hr {
 #carttotal{
 	display: flex;
 	flex-direction: row;
-	margin-left: 620px;
+	margin-left: 320px;
 	margin-right: 80px;
 	margin-top: -15px;
 	justify-content: space-between;
