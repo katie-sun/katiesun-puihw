@@ -81,11 +81,10 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
     }
 
     //calculate total price based on glaze selection + quantity
-    totalPrice = calculatePrice(basePrice, glazingPrice, packPrice)
+    totalPrice = calculatePrice(basePrice, glazingPrice, packPrice);
 
     //update total price according to the change
     document.getElementById("totalprice").innerHTML = ('$' + totalPrice.toFixed(2));
-
 
 
     cart = [];
@@ -111,7 +110,7 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
   // Use the URL parameter to update page
 
   const rollName = chosenRoll + ' cinnamon roll';
-  const rollBasePrice = rolls[chosenRoll].basePrice;
+  const rollBasePrice = '$' + rolls[chosenRoll].basePrice;
   const rollImage = './Assets/hw-1-assets/' + rolls[chosenRoll].imageFile;
 
   //update roll name
@@ -157,17 +156,14 @@ class Roll {
   constructor(rollType, rollGlazing, packSize, rollPrice) {
     this.type = rollType;
     this.glazing = rollGlazing; // this is a string-- need to get the price adaptation based on the string to calculate total price
-    this.size = packSize; //need to get pack size based on this number
+    this.size = packSize; //need to get pack size adjustment based on pack size
     this.basePrice = rollPrice;
-    // console.log(rollType, rollGlazing, packSize, rollPrice);
 
     this.calculatedPrice = calculatePrice(this.basePrice, glazePriceMap[this.glazing], packPriceMap[this.size]);
-
-    // console.log(this.calculatedPrice.toFixed(2));
   }
 }
 
-
+//Function to calculate the total price of an item based on adjustments
 function calculatePrice(basePrice, glazingPrice, packPrice) {
   return (basePrice + glazingPrice) * packPrice;
 }
@@ -177,8 +173,7 @@ if (document.URL.includes("shoppingcart.html")) {
 
   const cartSet = new Set();
 
-  //function that calculates price and pass it 
-
+  //Create 4 cinnamon roll objects
   const originalRoll = new Roll('Original', 'Sugar Milk', '1', 2.49);
   const walnutRoll = new Roll('Walnut', 'Vanilla Milk', '12', 3.49);
   const raisinRoll = new Roll('Raisin', 'Sugar Milk', '3', 2.99);
@@ -191,72 +186,62 @@ if (document.URL.includes("shoppingcart.html")) {
   cartSet.add(appleRoll);
 
 
-  //Parse the URL parameter and store the current roll type as a variable
-
-  // get the query string from the URL 
   const queryString = window.location.search;
-
-  // use the query string to create a URLSearchParams object
   const params = new URLSearchParams(queryString);
-
-  // access the parameter we want using the "get" method (e.g. stuff after roll)
   const chosenRoll = params.get('roll');
-
-  //variable = chosenRoll (which is storing the current roll type as a variable)
 
 
   let totalPrice = 0;
 
+  //function to populate cart with items based on template
   function fillCart(item) {
     //grab reference to cart item template
     const template = document.querySelector('#cartitems-template');
-    // console.log(template);
 
     //get content inside template and copy it using a clone method
     let clone = template.content.cloneNode(true);
 
     //get rid of the fragment
     let cartElement = clone.querySelector('.cinnamonbun');
-    // console.log(cartElement);
 
     //grab reference to div that will hold all cart items
     let cartGallery = document.querySelector('.sc-gallery');
 
+    //Appends appropriate DOM elements to shopping cart page
     cartElement.querySelector("#sc_Title").innerText = item.type + " Cinnamon Roll";
     cartElement.querySelector("#sc_Glazing").innerText = "Glazing: " + item.glazing;
     cartElement.querySelector("#sc_PackSize").innerText = "Pack Size: " + item.size;
     cartElement.querySelector(".donut-flavor-static").src = './Assets/hw-1-assets/' + item.type + "-cinnamon-roll.jpeg";
     cartElement.querySelector("#sc_individualitemprice").innerText = '$' + (item.calculatedPrice).toFixed(2);
 
-
+    //calculate total price of cart (within the loop)
     totalPrice = totalPrice + item.calculatedPrice;
     document.querySelector("#sc_totalprice").innerText = "$ " + totalPrice.toFixed(2);
 
     //add our newly created elements
     cartGallery.append(cartElement);
 
-    // console.log(item);
+    //remove cart elements
     let deleteButton = cartElement.querySelector('#deletebun');
     deleteButton.onclick = (() => {
-      console.log(item);
       cartElement.remove();
 
       let totalPrice = parseFloat(document.querySelector("#sc_totalprice").innerText.slice(2));
       let rollPrice = parseFloat(cartElement.querySelector("#sc_individualitemprice").innerText.slice(1)).toFixed(2);
+      //change total price each time a cart element is removed
       let newTotalPrice = totalPrice - rollPrice;
 
       document.querySelector("#sc_totalprice").innerText = "$ " + newTotalPrice.toFixed(2);
+      //delete item from cart
       cartSet.delete(item);
       console.log(cartSet);
 
     })
   }
 
+  //looping 4x for each of the buns
   for (item of cartSet) {
     fillCart(item);
-
-
-
 
   }
 }
