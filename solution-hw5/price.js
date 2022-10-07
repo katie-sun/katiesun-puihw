@@ -211,7 +211,7 @@ if (document.URL.includes("shoppingcart.html")) {
     cartElement.querySelector("#sc_Title").innerText = item.type + " Cinnamon Roll";
     cartElement.querySelector("#sc_Glazing").innerText = "Glazing: " + item.glazing;
     cartElement.querySelector("#sc_PackSize").innerText = "Pack Size: " + item.size;
-    cartElement.querySelector(".donut-flavor-static").src = './Assets/hw-1-assets/' + item.type + "-cinnamon-roll.jpeg";
+    cartElement.querySelector(".donut-flavor-static").src = './Assets/hw-1-assets/' + item.type.toLowerCase() + "-cinnamon-roll.jpeg";
     cartElement.querySelector("#sc_individualitemprice").innerText = '$' + (item.calculatedPrice).toFixed(2);
 
     //calculate total price of cart (within the loop)
