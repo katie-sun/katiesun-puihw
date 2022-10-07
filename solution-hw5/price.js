@@ -1,4 +1,6 @@
-// if (document.URL.includes("productdetail.html")){
+if (document.URL.includes("productdetail.html")){  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
+  //https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
+
 
 //set up arrays
 
@@ -9,21 +11,6 @@ let glazeInfo = [
   {glazingOptions:"Vanilla Milk", glazingPrice: 0.50},
   {glazingOptions:"Double Chocolate", glazingPrice: 1.50}
 ]
-
-
-const glazePriceMap = {
-  'Original': 0.0,
-  'Sugar Milk': 0.0,
-  'Vanilla Milk': 0.50,
-  'Double Chocolate': 1.50
-}
-
-const packPriceMap = {
-  '1': 1,
-  '3': 3,
-  '6': 5,
-  '12': 10
-}
 
 //pack sizes and prices array
 let packInfo = [
@@ -103,6 +90,9 @@ function glazingChange(element) {
 
 cart = [];
 
+}
+
+
 //Parse the URL parameter and store the current roll type as a variable
 
 // get the query string from the URL 
@@ -145,6 +135,22 @@ function addToCart(){
   console.log(cart);  
 }
 
+}
+
+//create maps to grab values for rollGlazing and packSize adjustments
+const glazePriceMap = {
+  'Keep Original': 0.0,
+  'Sugar Milk': 0.0,
+  'Vanilla Milk': 0.50,
+  'Double Chocolate': 1.50
+}
+
+const packPriceMap = {
+  '1': 1,
+  '3': 3,
+  '6': 5,
+  '12': 10
+}
 
 //Roll class
 class Roll{
@@ -157,7 +163,7 @@ class Roll{
 
     this.calculatedPrice = calculatePrice(this.basePrice, glazePriceMap[this.glazing], packPriceMap[this.size]);
 
-    console.log(this.calculatedPrice);
+    console.log(this.calculatedPrice.toFixed(2));
   }
 }
 
@@ -167,10 +173,10 @@ function calculatePrice(basePrice, glazingPrice, packPrice) {
   return (basePrice + glazingPrice) * packPrice;
 }
 
-}
 
 
-// if (document.URL.includes("shoppingcart.html")){
+
+if (document.URL.includes("shoppingcart.html")){
 
 const cartSet = new Set();
 
@@ -185,61 +191,55 @@ console.log(walnutRoll);
 const raisinRoll = new Roll('Raisin','Sugar Milk', '3', 2.99);
 console.log(raisinRoll);
 
-const appleRoll = new Roll('Apple', 'Original', '3', 3.49);
+const appleRoll = new Roll('Apple', 'Keep Original', '3', 3.49);
 console.log(appleRoll);
-console.log(appleRoll.glazing)
-console.log(raisinRoll.glazing)
+
 
 cartSet.add(originalRoll);
 cartSet.add(walnutRoll);
 cartSet.add(raisinRoll);
 cartSet.add(appleRoll);
 
-function createElement(cartSetItem){
+//Parse the URL parameter and store the current roll type as a variable
+
+// get the query string from the URL 
+const queryString = window.location.search;
+
+// use the query string to create a URLSearchParams object
+const params = new URLSearchParams(queryString);
+
+// access the parameter we want using the "get" method (e.g. stuff after roll)
+const chosenRoll = params.get('roll');
+
+//variable = chosenRoll (which is storing the current roll type as a variable)
+
+
+for (item of cartSet) {
+  //grab reference to cart item template
   const template = document.querySelector('#cartitems-template');
+  console.log(template);
+
+  //get content inside template and copy it using a clone method
   let clone = template.content.cloneNode(true);
 
   //get rid of the fragment
   let cartElement = clone.querySelector('.cinnamonbun');
   console.log(cartElement);
 
+  //grab reference to div that will hold all cart items
   let cartGallery = document.querySelector('.sc-gallery');
 
+  cartElement.querySelector("#sc_Title").innerText = item.type + " Cinnamon Roll";
+  cartElement.querySelector("#sc_Glazing").innerText = "Glazing: " + item.glazing;
+  cartElement.querySelector("#sc_PackSize").innerText = "Pack Size: " + item.size;
+  cartElement.querySelector(".donut-flavor-static").src = './Assets/hw-1-assets/' + item.type + "-cinnamon-roll.jpeg";
+
+
+  //add our newly created elements
   cartGallery.append(cartElement);
 
 }
-
-for (item in cartSet) {
-  createElement(cartSet[item])
 }
 
 
 
-
-
-// function updateCart(rollType, rollGlazing, packSize){
-//   for (let i = 0; i < cartSet.length; i++){ //in the cart
-//     //if the name of the glaze in the cart (e.g. cart[i.i?])
-    
-//     for (let i =0; i<glazeInfo.length; i++){     
-//       if (rollGlazing = glazeInfo[i].glazingOptions){
-//         glazingPrice = glazeInfo[i].glazingPrice;
-//       }
- 
-//       }
-  
-//     // for (let i =0; i<packInfo.length; i++){
-//     //   packSize = packInfo[i].packPrice;
-//     //   }
-    
-//     calculatedPrice = calculatePrice(rolls[rollType].basePrice, glazingPrice, packPrice);
-
-//     console.log(calculatedPrice);
-//   }  
-
-
-
-// }
-
-// updateCart(cartSet);
-// console.log(cartSet);
