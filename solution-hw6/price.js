@@ -1,29 +1,32 @@
+// if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
+//https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
+
+
+//set up arrays
+
+//glazes and prices array
+let glazeInfo = [
+  { glazingOptions: "Keep Original", glazingPrice: 0.00 },
+  { glazingOptions: "Sugar Milk", glazingPrice: 0.00 },
+  { glazingOptions: "Vanilla Milk", glazingPrice: 0.50 },
+  { glazingOptions: "Double Chocolate", glazingPrice: 1.50 }
+]
+
+//pack sizes and prices array
+let packInfo = [
+  { packSize: "1", packPrice: 1 },
+  { packSize: "3", packPrice: 3 },
+  { packSize: "6", packPrice: 5 },
+  { packSize: "12", packPrice: 10 },
+]
+
+//update option using for loop w/.js
+
+// When the page loads, find the Glaze select element.
+let selectGlaze = document.querySelector("#glazes");
+
 if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
   //https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
-
-
-  //set up arrays
-
-  //glazes and prices array
-  let glazeInfo = [
-    { glazingOptions: "Keep Original", glazingPrice: 0.00 },
-    { glazingOptions: "Sugar Milk", glazingPrice: 0.00 },
-    { glazingOptions: "Vanilla Milk", glazingPrice: 0.50 },
-    { glazingOptions: "Double Chocolate", glazingPrice: 1.50 }
-  ]
-
-  //pack sizes and prices array
-  let packInfo = [
-    { packSize: "1", packPrice: 1 },
-    { packSize: "3", packPrice: 3 },
-    { packSize: "6", packPrice: 5 },
-    { packSize: "12", packPrice: 10 },
-  ]
-
-  //update option using for loop w/.js
-
-  // When the page loads, find the Glaze select element.
-  let selectGlaze = document.querySelector("#glazes");
 
   for (let i = 0; i < glazeInfo.length; i++) {
     // create HTML element
@@ -35,9 +38,14 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
     // append to HTML element
     selectGlaze.appendChild(option);
   }
+}
 
-  // When the page loads, find the Pack Size select element.
-  let selectPackSize = document.querySelector("#packsizes");
+// When the page loads, find the Pack Size select element.
+let selectPackSize = document.querySelector("#packsizes");
+
+if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
+  //https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
+
   for (let i = 0; i < packInfo.length; i++) {
     // create HTML element
     const option = document.createElement('option');
@@ -48,80 +56,85 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
     // append to pack size dropdown
     selectPackSize.appendChild(option);
   }
+}
 
-  // Set constants + variables
-  let basePrice = 2.49;
-  let glazingPrice = 0.00;
-  // let packSize = 1;
-  let packPrice = 1;
+// Set constants + variables
+let basePrice = 2.49;
+let glazingPrice = 0.00;
+// let packSize = 1;
+let packPrice = 1;
 
-  //function to trigger price update based on user selections in the drop down
-  function glazingChange(element) {
-    // get value of selected glazing option
-    const priceChange = element.value;
-    console.log('priceChange: ' + priceChange);
+//function to trigger price update based on user selections in the drop down
+function glazingChange(element) {
+  // get value of selected glazing option
+  const priceChange = element.value;
+  console.log('priceChange: ' + priceChange);
 
-    //retrieve glaze object corresponding to the selected option
+  //retrieve glaze object corresponding to the selected option
 
-    //loop through array
-    for (let i = 0; i < glazeInfo.length; i++) {
+  //loop through array
+  for (let i = 0; i < glazeInfo.length; i++) {
 
-      //find out if item in dropdown selection equals item in array
-      if (glazeInfo[i].glazingOptions == element.value) {
-        console.log('glazeInfo key value: ' + glazeInfo[i].glazingOptions);
-        console.log('element.value: ' + element.value);
-        //if so, set glazingPrice variable to price addition
-        glazingPrice = glazeInfo[i].glazingPrice;
-        console.log('look HERE:' + glazingPrice);
-      }
+    //find out if item in dropdown selection equals item in array
+    if (glazeInfo[i].glazingOptions == element.value) {
+      console.log('glazeInfo key value: ' + glazeInfo[i].glazingOptions);
+      console.log('element.value: ' + element.value);
+      //if so, set glazingPrice variable to price addition
+      glazingPrice = glazeInfo[i].glazingPrice;
+      console.log('look HERE:' + glazingPrice);
     }
-
-    //retrieve pack size object corresponding to the selected option
-    for (let i = 0; i < packInfo.length; i++) {
-      if (packInfo[i].packSize == element.value) {
-        console.log('packInfo key value: ' + packInfo[i].packSize);
-        console.log('packSize element.value: ' + element.value);
-        packPrice = packInfo[i].packPrice;
-        console.log('what the fuck is this pack size adjustment:' + packPrice);
-      }
-    }
-
-    console.log('selectGlaze: ' + selectGlaze.value);
-    console.log('selectPackSize: ' + selectPackSize.value);
-
-    console.log('basePrice: ' + basePrice);
-    console.log('glazingPrice: ' + glazingPrice);
-    console.log('packPrice: ' + packPrice);
-
-    //calculate total price based on glaze selection + quantity
-    let totalPrice = ((basePrice + glazingPrice) * packPrice);
-    console.log('totalPrice: ' + totalPrice);
-
-
-    //update total price according to the change
-    document.getElementById("totalprice").innerHTML = ('$' + totalPrice.toFixed(2));
-
-
   }
 
-  cart = [];
+  //retrieve pack size object corresponding to the selected option
+  for (let i = 0; i < packInfo.length; i++) {
+    if (packInfo[i].packSize == element.value) {
+      console.log('packInfo key value: ' + packInfo[i].packSize);
+      console.log('packSize element.value: ' + element.value);
+      packPrice = packInfo[i].packPrice;
+      console.log('what the fuck is this pack size adjustment:' + packPrice);
+    }
+  }
 
-  //Parse the URL parameter and store the current roll type as a variable
+  console.log('selectGlaze: ' + selectGlaze.value);
+  console.log('selectPackSize: ' + selectPackSize.value);
 
-  // get the query string from the URL 
-  const queryString = window.location.search;
+  console.log('basePrice: ' + basePrice);
+  console.log('glazingPrice: ' + glazingPrice);
+  console.log('packPrice: ' + packPrice);
 
-  // use the query string to create a URLSearchParams object
-  const params = new URLSearchParams(queryString);
-
-  // access the parameter we want using the "get" method (e.g. stuff after roll)
-  const chosenRoll = params.get('roll');
-
-  //variable = chosenRoll (which is storing the current roll type as a variable)
+  //calculate total price based on glaze selection + quantity
+  let totalPrice = ((basePrice + glazingPrice) * packPrice);
+  console.log('totalPrice: ' + totalPrice);
 
 
+  //update total price according to the change
+  document.getElementById("totalprice").innerHTML = ('$' + totalPrice.toFixed(2));
 
-  // Use the URL parameter to update page
+
+}
+
+cart = [];
+
+//Parse the URL parameter and store the current roll type as a variable
+
+// get the query string from the URL 
+const queryString = window.location.search;
+
+// use the query string to create a URLSearchParams object
+const params = new URLSearchParams(queryString);
+
+// access the parameter we want using the "get" method (e.g. stuff after roll)
+const chosenRoll = params.get('roll');
+
+// variable = chosenRoll (which is storing the current roll type as a variable)
+
+
+
+// Use the URL parameter to update page
+
+if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
+  //https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
+
 
   const rollName = chosenRoll + ' cinnamon roll';
   console.log('chosenRoll: ' + chosenRoll);
@@ -146,34 +159,36 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
   basePrice = rollBasePrice;
   console.log('basePrice: ' + basePrice);
 
-  class Rolltest {
-    constructor(chosenRoll, rollGlazing, packSize, basePrice) {
-      this.type = chosenRoll;
-      this.glazing = rollGlazing;
-      this.size = packSize;
-      this.basePrice = basePrice;
-    }
+} //end product-detail specific code
+
+class Rolltest {
+  constructor(chosenRoll, rollGlazing, packSize, basePrice) {
+    this.type = chosenRoll;
+    this.glazing = rollGlazing;
+    this.size = packSize;
+    this.basePrice = basePrice;
   }
-
-
-  function addToCart() {
-
-    //Append to empty cart array
-    let customRoll = new Rolltest(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
-    cart.push(customRoll);
-
-    console.log(cart);
-  }
-
-  function saveAToLocalStorage() {
-    const rollArray = Array.from(cartSet);
-    console.log(rollArray);
-
-    const rollArrayString = JSON.stringify(rollArray);
-    console.log(rollArrayString);
-  }
-
 }
+
+
+function addToCart() {
+
+  //Append to empty cart array
+  let customRoll = new Rolltest(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
+  cart.push(customRoll);
+
+  console.log(cart);
+}
+
+function saveAToLocalStorage() {
+  const rollArray = Array.from(cartSet);
+  console.log(rollArray);
+
+  const rollArrayString = JSON.stringify(rollArray);
+  console.log(rollArrayString);
+}
+
+// }
 
 //create maps to grab values for rollGlazing and packSize adjustments
 const glazePriceMap = {
@@ -221,29 +236,30 @@ function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
 const newRollOne = createCartRoll('Original', 'Sugar Milk', '1', 2.49);
 const newRollTwo = createCartRoll('Walnut', 'Vanilla Milk', '12', 3.49);
 
+// if (document.URL.includes("shoppingcart.html")) {
+
+
+//Create 4 cinnamon roll objects
+// const originalRoll = new Roll('Original', 'Sugar Milk', '1', 2.49);
+// const walnutRoll = new Roll('Walnut', 'Vanilla Milk', '12', 3.49);
+// const raisinRoll = new Roll('Raisin', 'Sugar Milk', '3', 2.99);
+// const appleRoll = new Roll('Apple', 'Keep Original', '3', 3.49);
+
+
+// cartSet.add(originalRoll);
+// cartSet.add(walnutRoll);
+// cartSet.add(raisinRoll);
+// cartSet.add(appleRoll);
+
+
+// const queryString = window.location.search;
+// const params = new URLSearchParams(queryString);
+// const chosenRoll = params.get('roll');
+
+
+let totalPrice = 0;
+
 if (document.URL.includes("shoppingcart.html")) {
-
-
-  //Create 4 cinnamon roll objects
-  // const originalRoll = new Roll('Original', 'Sugar Milk', '1', 2.49);
-  // const walnutRoll = new Roll('Walnut', 'Vanilla Milk', '12', 3.49);
-  // const raisinRoll = new Roll('Raisin', 'Sugar Milk', '3', 2.99);
-  // const appleRoll = new Roll('Apple', 'Keep Original', '3', 3.49);
-
-
-  // cartSet.add(originalRoll);
-  // cartSet.add(walnutRoll);
-  // cartSet.add(raisinRoll);
-  // cartSet.add(appleRoll);
-
-
-  const queryString = window.location.search;
-  const params = new URLSearchParams(queryString);
-  const chosenRoll = params.get('roll');
-
-
-  let totalPrice = 0;
-
   //function to populate cart with items based on template
   function fillCart(item) {
     //grab reference to cart item template
@@ -289,12 +305,11 @@ if (document.URL.includes("shoppingcart.html")) {
 
     })
   }
-
   //looping 4x for each of the buns [iterating through a set/array]
   for (item of cartSet) {
     fillCart(item);
 
   }
 
-
 }
+// }
