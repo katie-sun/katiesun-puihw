@@ -94,10 +94,6 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
     console.log('packPrice: ' + packPrice);
 
     //calculate total price based on glaze selection + quantity
-
-    totalTest = (basePrice + glazingPrice) * packPrice;
-    console.log('lordhelpme: ' + totalTest);
-
     let totalPrice = ((basePrice + glazingPrice) * packPrice);
     console.log('totalPrice: ' + totalPrice);
 
@@ -150,14 +146,14 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
   basePrice = rollBasePrice;
   console.log('basePrice: ' + basePrice);
 
-  // class Rolltest {
-  //   constructor(chosenRoll, rollGlazing, packSize, basePrice) {
-  //     this.type = chosenRoll;
-  //     this.glazing = rollGlazing;
-  //     this.size = packSize;
-  //     this.basePrice = basePrice;
-  //   }
-  // }
+  class Rolltest {
+    constructor(chosenRoll, rollGlazing, packSize, basePrice) {
+      this.type = chosenRoll;
+      this.glazing = rollGlazing;
+      this.size = packSize;
+      this.basePrice = basePrice;
+    }
+  }
 
 
   function addToCart() {
@@ -213,21 +209,32 @@ function calculatePrice(basePrice, glazingPrice, packPrice) {
 
 const cartSet = new Set();
 
+//function to replace hardcoding the rolls (to create new Roll objects)
+function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
+  const newRoll = new Roll(rollType, rollGlazing, packSize, rollPrice);
+  cartSet.add(newRoll);
+  return newRoll;
+
+}
+
+//test createCartRoll function
+const newRollOne = createCartRoll('Original', 'Sugar Milk', '1', 2.49);
+const newRollTwo = createCartRoll('Walnut', 'Vanilla Milk', '12', 3.49);
 
 if (document.URL.includes("shoppingcart.html")) {
 
 
   //Create 4 cinnamon roll objects
-  const originalRoll = new Roll('Original', 'Sugar Milk', '1', 2.49);
-  const walnutRoll = new Roll('Walnut', 'Vanilla Milk', '12', 3.49);
-  const raisinRoll = new Roll('Raisin', 'Sugar Milk', '3', 2.99);
-  const appleRoll = new Roll('Apple', 'Keep Original', '3', 3.49);
+  // const originalRoll = new Roll('Original', 'Sugar Milk', '1', 2.49);
+  // const walnutRoll = new Roll('Walnut', 'Vanilla Milk', '12', 3.49);
+  // const raisinRoll = new Roll('Raisin', 'Sugar Milk', '3', 2.99);
+  // const appleRoll = new Roll('Apple', 'Keep Original', '3', 3.49);
 
 
-  cartSet.add(originalRoll);
-  cartSet.add(walnutRoll);
-  cartSet.add(raisinRoll);
-  cartSet.add(appleRoll);
+  // cartSet.add(originalRoll);
+  // cartSet.add(walnutRoll);
+  // cartSet.add(raisinRoll);
+  // cartSet.add(appleRoll);
 
 
   const queryString = window.location.search;
@@ -283,7 +290,7 @@ if (document.URL.includes("shoppingcart.html")) {
     })
   }
 
-  //looping 4x for each of the buns
+  //looping 4x for each of the buns [iterating through a set/array]
   for (item of cartSet) {
     fillCart(item);
 
