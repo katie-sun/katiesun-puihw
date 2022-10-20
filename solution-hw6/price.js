@@ -166,17 +166,31 @@ class Roll {
   }
 }
 
+// function addToCart() {
+
+//   //Append to empty cart array
+//   let customRoll = new Roll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
+//   // cart.push(customRoll);
+//   cartSet.add(customRoll);
+
+//   // console.log(cart);
+//   console.log(cartSet);
+//   saveToLocalStorage();
+//   // return customRoll;
+// }
+
+
 function addToCart() {
 
   //Append to empty cart array
-  let customRoll = new Roll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
+  let customRoll = createCartRoll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
   // cart.push(customRoll);
-  cartSet.add(customRoll);
+  // cartSet.add(customRoll);
 
   // console.log(cart);
   console.log(cartSet);
   saveToLocalStorage();
-  return customRoll;
+  // return customRoll;
 }
 
 function saveToLocalStorage() {
@@ -201,9 +215,6 @@ function retrieveFromLocalStorage() {
     fillCart(cartRoll);
 
   }
-  //   for (let item of rollArray) {
-  //     fillCart(item);
-  //   }
 }
 
 //use array to create an object, take object info + populate DOM based on shit in the array
@@ -244,17 +255,6 @@ function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
 // const walnutRoll = new Roll('Walnut', 'Vanilla Milk', '12', 3.49);
 // const raisinRoll = new Roll('Raisin', 'Sugar Milk', '3', 2.99);
 // const appleRoll = new Roll('Apple', 'Keep Original', '3', 3.49);
-
-
-// cartSet.add(originalRoll);
-// cartSet.add(walnutRoll);
-// cartSet.add(raisinRoll);
-// cartSet.add(appleRoll);
-
-
-// const queryString = window.location.search;
-// const params = new URLSearchParams(queryString);
-// const chosenRoll = params.get('roll');
 
 
 let totalPrice = 0;
