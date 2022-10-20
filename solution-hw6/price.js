@@ -66,7 +66,6 @@ let packPrice = 1;
 function glazingChange(element) {
   // get value of selected glazing option
   const priceChange = element.value;
-  console.log('priceChange: ' + priceChange);
 
   //retrieve glaze object corresponding to the selected option
 
@@ -75,36 +74,21 @@ function glazingChange(element) {
 
     //find out if item in dropdown selection equals item in array
     if (glazeInfo[i].glazingOptions == element.value) {
-      console.log('glazeInfo key value: ' + glazeInfo[i].glazingOptions);
-      console.log('element.value: ' + element.value);
+
       //if so, set glazingPrice variable to price addition
       glazingPrice = glazeInfo[i].glazingPrice;
-      console.log('look HERE:' + glazingPrice);
     }
   }
 
   //retrieve pack size object corresponding to the selected option
   for (let i = 0; i < packInfo.length; i++) {
     if (packInfo[i].packSize == element.value) {
-      console.log('packInfo key value: ' + packInfo[i].packSize);
-      console.log('packSize element.value: ' + element.value);
       packPrice = packInfo[i].packPrice;
-      console.log('what the fuck is this pack size adjustment:' + packPrice);
     }
   }
 
-  //console logs
-  // console.log('selectGlaze: ' + selectGlaze + selectGlaze.value);
-  // console.log('selectPackSize: ' + selectPackSize.value);
-
-  // console.log('basePrice: ' + basePrice);
-  // console.log('glazingPrice: ' + glazingPrice);
-  // console.log('packPrice: ' + packPrice);
-
   //calculate total price based on glaze selection + quantity
   let totalPrice = ((basePrice + glazingPrice) * packPrice);
-  console.log('totalPrice: ' + totalPrice);
-
 
   //update total price according to the change
   document.getElementById("totalprice").innerHTML = ('$' + totalPrice.toFixed(2));
@@ -136,10 +120,7 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
 
 
   const rollName = chosenRoll + ' cinnamon roll';
-  console.log('chosenRoll: ' + chosenRoll);
   const rollBasePrice = rolls[chosenRoll].basePrice;
-  // const rollBasePriceDollar = '$' + rolls[chosenRoll].basePrice;
-  console.log('rollBasePrice: ' + rollBasePrice);
   const rollImage = './Assets/hw-1-assets/' + rolls[chosenRoll].imageFile;
 
   //update roll name
@@ -198,10 +179,6 @@ function addToCart() {
   return customRoll;
 }
 
-if (localStorage.getItem('storedRolls') != null) {
-  retrieveFromLocalStorage();
-}
-
 function saveToLocalStorage() {
   const rollArray = Array.from(cartSet);
   console.log(rollArray);
@@ -218,21 +195,20 @@ function retrieveFromLocalStorage() {
   const rollArrayString = localStorage.getItem('storedRolls');
   const rollArray = JSON.parse(rollArrayString);
   console.log(rollArray);
-  console.log(cartSet);
 
-  for (const item of rollArray) {
-    fillCart(item);
-    //   const createRoll = createCartRoll(item.type, item.glazing, item.type, item.basePrice);
+  for (rollData of rollArray) {
+    const cartRoll = createCartRoll(rollData.type, rollData.glazing, rollData.size, rollData.basePrice);
+    fillCart(cartRoll);
 
-    //   fillCart(createRoll);
   }
   //   for (let item of rollArray) {
   //     fillCart(item);
   //   }
 }
 
-
-
+//use array to create an object, take object info + populate DOM based on shit in the array
+//write a more generic function that creates the object
+//call fill cart function
 
 
 //Function to calculate the total price of an item based on adjustments
@@ -241,6 +217,12 @@ function calculatePrice(basePrice, glazingPrice, packPrice) {
 }
 
 
+//function to replace hardcoding the rolls (to create new Roll objects)
+function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
+  const newRoll = new Roll(rollType, rollGlazing, packSize, rollPrice);
+  cartSet.add(newRoll);
+  return newRoll;
+}
 
 //function to replace hardcoding the rolls (to create new Roll objects)
 // function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
@@ -325,10 +307,14 @@ if (document.URL.includes("shoppingcart.html")) {
     })
   }
   //looping 4x for each of the buns [iterating through a set/array]
-  for (item of rollArray) {
+  for (item of cartSet) {
     fillCart(item);
 
   }
 
 }
 
+
+if (localStorage.getItem('storedRolls') != null) {
+  retrieveFromLocalStorage();
+}
