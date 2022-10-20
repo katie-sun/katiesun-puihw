@@ -25,8 +25,7 @@ let packInfo = [
 // When the page loads, find the Glaze select element.
 let selectGlaze = document.querySelector("#glazes");
 
-if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
-  //https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
+if (document.URL.includes("productdetail.html")) {
 
   for (let i = 0; i < glazeInfo.length; i++) {
     // create HTML element
@@ -43,8 +42,7 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
 // When the page loads, find the Pack Size select element.
 let selectPackSize = document.querySelector("#packsizes");
 
-if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
-  //https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
+if (document.URL.includes("productdetail.html")) {
 
   for (let i = 0; i < packInfo.length; i++) {
     // create HTML element
@@ -95,12 +93,13 @@ function glazingChange(element) {
     }
   }
 
-  console.log('selectGlaze: ' + selectGlaze.value);
-  console.log('selectPackSize: ' + selectPackSize.value);
+  //console logs
+  // console.log('selectGlaze: ' + selectGlaze + selectGlaze.value);
+  // console.log('selectPackSize: ' + selectPackSize.value);
 
-  console.log('basePrice: ' + basePrice);
-  console.log('glazingPrice: ' + glazingPrice);
-  console.log('packPrice: ' + packPrice);
+  // console.log('basePrice: ' + basePrice);
+  // console.log('glazingPrice: ' + glazingPrice);
+  // console.log('packPrice: ' + packPrice);
 
   //calculate total price based on glaze selection + quantity
   let totalPrice = ((basePrice + glazingPrice) * packPrice);
@@ -138,7 +137,6 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
 
   const rollName = chosenRoll + ' cinnamon roll';
   console.log('chosenRoll: ' + chosenRoll);
-  console.log('rollName: ' + rollName);
   const rollBasePrice = rolls[chosenRoll].basePrice;
   // const rollBasePriceDollar = '$' + rolls[chosenRoll].basePrice;
   console.log('rollBasePrice: ' + rollBasePrice);
@@ -146,49 +144,17 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
 
   //update roll name
   document.querySelector('#pagetitle').innerText = rollName;
-  console.log(rollName);
 
   //update roll price
   document.querySelector('#totalprice').innerText = '$' + rollBasePrice;
-  console.log('rollBasePrice: ' + rollBasePrice);
 
   //update roll image link
   document.querySelector('.donut-flavor-static').src = rollImage;
 
   //update base price variable
   basePrice = rollBasePrice;
-  console.log('basePrice: ' + basePrice);
 
 } //end product-detail specific code
-
-class Rolltest {
-  constructor(chosenRoll, rollGlazing, packSize, basePrice) {
-    this.type = chosenRoll;
-    this.glazing = rollGlazing;
-    this.size = packSize;
-    this.basePrice = basePrice;
-  }
-}
-
-
-function addToCart() {
-
-  //Append to empty cart array
-  let customRoll = new Rolltest(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
-  cart.push(customRoll);
-
-  console.log(cart);
-}
-
-function saveAToLocalStorage() {
-  const rollArray = Array.from(cartSet);
-  console.log(rollArray);
-
-  const rollArrayString = JSON.stringify(rollArray);
-  console.log(rollArrayString);
-}
-
-// }
 
 //create maps to grab values for rollGlazing and packSize adjustments
 const glazePriceMap = {
@@ -205,6 +171,8 @@ const packPriceMap = {
   '12': 10
 }
 
+const cartSet = new Set();
+
 //Roll class
 class Roll {
   constructor(rollType, rollGlazing, packSize, rollPrice) {
@@ -217,24 +185,74 @@ class Roll {
   }
 }
 
+function addToCart() {
+
+  //Append to empty cart array
+  let customRoll = new Roll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
+  // cart.push(customRoll);
+  cartSet.add(customRoll);
+
+  // console.log(cart);
+  console.log(cartSet);
+  saveToLocalStorage();
+  return customRoll;
+}
+
+if (localStorage.getItem('storedRolls') != null) {
+  retrieveFromLocalStorage();
+}
+
+function saveToLocalStorage() {
+  const rollArray = Array.from(cartSet);
+  console.log(rollArray);
+
+  const rollArrayString = JSON.stringify(rollArray);
+  console.log(rollArrayString);
+
+  localStorage.setItem('storedRolls', rollArrayString);
+
+  console.log('cartset: ' + cartSet);
+}
+
+function retrieveFromLocalStorage() {
+  const rollArrayString = localStorage.getItem('storedRolls');
+  const rollArray = JSON.parse(rollArrayString);
+  console.log(rollArray);
+  console.log(cartSet);
+
+  for (const item of rollArray) {
+    fillCart(item);
+    //   const createRoll = createCartRoll(item.type, item.glazing, item.type, item.basePrice);
+
+    //   fillCart(createRoll);
+  }
+  //   for (let item of rollArray) {
+  //     fillCart(item);
+  //   }
+}
+
+
+
+
+
 //Function to calculate the total price of an item based on adjustments
 function calculatePrice(basePrice, glazingPrice, packPrice) {
   return (basePrice + glazingPrice) * packPrice;
 }
 
-const cartSet = new Set();
+
 
 //function to replace hardcoding the rolls (to create new Roll objects)
-function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
-  const newRoll = new Roll(rollType, rollGlazing, packSize, rollPrice);
-  cartSet.add(newRoll);
-  return newRoll;
+// function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
+//   const newRoll = new Roll(rollType, rollGlazing, packSize, rollPrice);
+//   cartSet.add(newRoll);
+//   return newRoll;
+// }
+// }
 
-}
-
-//test createCartRoll function
-const newRollOne = createCartRoll('Original', 'Sugar Milk', '1', 2.49);
-const newRollTwo = createCartRoll('Walnut', 'Vanilla Milk', '12', 3.49);
+// // //test createCartRoll function
+// const newRollOne = createCartRoll('Original', 'Sugar Milk', '1', 2.49);
+// const newRollTwo = createCartRoll('Walnut', 'Vanilla Milk', '12', 3.49);
 
 // if (document.URL.includes("shoppingcart.html")) {
 
@@ -301,15 +319,16 @@ if (document.URL.includes("shoppingcart.html")) {
       document.querySelector("#sc_totalprice").innerText = "$ " + newTotalPrice.toFixed(2);
       //delete item from cart
       cartSet.delete(item);
+      saveToLocalStorage();
       console.log(cartSet);
 
     })
   }
   //looping 4x for each of the buns [iterating through a set/array]
-  for (item of cartSet) {
+  for (item of rollArray) {
     fillCart(item);
 
   }
 
 }
-// }
+
