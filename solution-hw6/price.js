@@ -173,45 +173,14 @@ class Roll {
   }
 }
 
-// function addToCart() {
-
-//   let customRoll = new Roll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
-//   // cart.push(customRoll);
-//   cartSet.add(customRoll);
-
-//   // console.log(cart);
-//   console.log(cartSet);
-
-//   saveToLocalStorage();
-
-//   // return customRoll;
-// }
-
-
-// function addToCart() {
-
-//   //Append to empty cart array
-//   let customRoll = createCartRoll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
-//   cart.push(customRoll);
-//   // cartSet.add(customRoll);
-
-//   console.log(cart);
-//   console.log(cartSet);
-//   saveToLocalStorage();
-//   // return customRoll;
-//   console.log(localStorage);
-// }
-
 //attempt 3 modeled after pui note
 function addToCart() {
 
   let newRoll = createCartRoll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
   // fillCart(newRoll);
   cartSet.add(newRoll);
-
+  console.log(cartSet);
   saveToLocalStorage();
-  // return customRoll;
-  console.log(localStorage);
 }
 
 function retrieveFromLocalStorage() {
@@ -219,39 +188,19 @@ function retrieveFromLocalStorage() {
   if (rollArrayString) {
     const rollArray = JSON.parse(rollArrayString);
     cartSet = new Set(Array.from(rollArray));
-    console.log(rollArray);
-
-    // let cartArray = localStorage.getItem('localCart');
-    // if (cartArray) {
-    // let cartA = JSON.parse(cartArray);
-    // cartSet = new Set(Array.from(cartA));
-    console.log(cartSet);
   }
 
-  // for (let rollData of rollArray) {
-  //   const cartRoll = createCartRoll(rollData.type, rollData.glazing, rollData.size, rollData.basePrice);
-  //   fillCart(cartRoll);
-
-  // }
 }
 console.log(cartSet);
 
 
 function saveToLocalStorage() {
   const rollArray = Array.from(cartSet);
-  console.log(rollArray);
 
   const rollArrayString = JSON.stringify(rollArray);
-  console.log(rollArrayString);
 
   localStorage.setItem('storedRolls', rollArrayString);
-  // console.log('storedRolls');
 }
-
-//use array to create an object, take object info + populate DOM based on shit in the array
-//write a more generic function that creates the object
-//call fill cart function
-
 
 //Function to calculate the total price of an item based on adjustments
 function calculatePrice(basePrice, glazingPrice, packPrice) {
@@ -265,28 +214,6 @@ function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
   cartSet.add(newRoll);
   return newRoll;
 }
-
-//function to replace hardcoding the rolls (to create new Roll objects)
-// function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
-//   const newRoll = new Roll(rollType, rollGlazing, packSize, rollPrice);
-//   cartSet.add(newRoll);
-//   return newRoll;
-// }
-// }
-
-// // //test createCartRoll function
-// const newRollOne = createCartRoll('Original', 'Sugar Milk', '1', 2.49);
-// const newRollTwo = createCartRoll('Walnut', 'Vanilla Milk', '12', 3.49);
-
-// if (document.URL.includes("shoppingcart.html")) {
-
-
-//Create 4 cinnamon roll objects
-// const originalRoll = new Roll('Original', 'Sugar Milk', '1', 2.49);
-// const walnutRoll = new Roll('Walnut', 'Vanilla Milk', '12', 3.49);
-// const raisinRoll = new Roll('Raisin', 'Sugar Milk', '3', 2.99);
-// const appleRoll = new Roll('Apple', 'Keep Original', '3', 3.49);
-
 
 let totalPrice = 0;
 
@@ -344,13 +271,5 @@ if (document.URL.includes("shoppingcart.html")) {
 
   }
 
-
-
-
-  // }
-
-  // else {
-  //   (console.log('asdfghjklcart: ' + cartSet))
-  // }
 }
 
