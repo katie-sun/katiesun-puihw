@@ -141,7 +141,7 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
   //update base price variable
   basePrice = rollBasePrice;
 
-} //end product-detail specific code
+}
 
 
 
@@ -174,6 +174,7 @@ class Roll {
 }
 
 //attempt 3 modeled after pui note
+//function to add new rolls to cart set
 function addToCart() {
 
   let newRoll = createCartRoll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
@@ -183,6 +184,7 @@ function addToCart() {
   saveToLocalStorage();
 }
 
+//function to retrieve from local storage + populate cart set
 function retrieveFromLocalStorage() {
   const rollArrayString = localStorage.getItem('storedRolls');
   if (rollArrayString) {
@@ -193,7 +195,7 @@ function retrieveFromLocalStorage() {
 }
 console.log(cartSet);
 
-
+//function to save to local storage as a string
 function saveToLocalStorage() {
   const rollArray = Array.from(cartSet);
 
@@ -265,7 +267,6 @@ if (document.URL.includes("shoppingcart.html")) {
 
     })
   }
-  //looping 4x for each of the buns [iterating through a set/array]
   for (item of cartSet) {
     fillCart(item);
 
