@@ -1,3 +1,9 @@
+let cartSet = new Set();
+
+if (localStorage.getItem('storedRolls') != null) {
+  retrieveFromLocalStorage();
+}
+
 // if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
 //https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
 
@@ -22,11 +28,11 @@ let packInfo = [
 
 //update option using for loop w/.js
 
+
 // When the page loads, find the Glaze select element.
 let selectGlaze = document.querySelector("#glazes");
 
 if (document.URL.includes("productdetail.html")) {
-
   for (let i = 0; i < glazeInfo.length; i++) {
     // create HTML element
     const option = document.createElement('option');
@@ -137,6 +143,8 @@ if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3sc
 
 } //end product-detail specific code
 
+
+
 //create maps to grab values for rollGlazing and packSize adjustments
 const glazePriceMap = {
   'Keep Original': 0.0,
@@ -152,7 +160,6 @@ const packPriceMap = {
   '12': 10
 }
 
-const cartSet = new Set();
 
 //Roll class
 class Roll {
@@ -166,19 +173,19 @@ class Roll {
   }
 }
 
-function addToCart() {
+// function addToCart() {
 
-  let customRoll = new Roll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
-  // cart.push(customRoll);
-  cartSet.add(customRoll);
+//   let customRoll = new Roll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
+//   // cart.push(customRoll);
+//   cartSet.add(customRoll);
 
-  // console.log(cart);
-  console.log(cartSet);
+//   // console.log(cart);
+//   console.log(cartSet);
 
-  saveToLocalStorage();
+//   saveToLocalStorage();
 
-  // return customRoll;
-}
+//   // return customRoll;
+// }
 
 
 // function addToCart() {
@@ -195,18 +202,40 @@ function addToCart() {
 //   console.log(localStorage);
 // }
 
+//attempt 3 modeled after pui note
+function addToCart() {
+
+  let newRoll = createCartRoll(chosenRoll, selectGlaze.value, selectPackSize.value, basePrice);
+  // fillCart(newRoll);
+  cartSet.add(newRoll);
+
+  saveToLocalStorage();
+  // return customRoll;
+  console.log(localStorage);
+}
+
 function retrieveFromLocalStorage() {
   const rollArrayString = localStorage.getItem('storedRolls');
-  const rollArray = JSON.parse(rollArrayString);
-  console.log(rollArray);
+  if (rollArrayString) {
+    const rollArray = JSON.parse(rollArrayString);
+    cartSet = new Set(Array.from(rollArray));
+    console.log(rollArray);
 
-  for (let rollData of rollArray) {
-    const cartRoll = createCartRoll(rollData.type, rollData.glazing, rollData.size, rollData.basePrice);
-    fillCart(cartRoll);
-
+    // let cartArray = localStorage.getItem('localCart');
+    // if (cartArray) {
+    // let cartA = JSON.parse(cartArray);
+    // cartSet = new Set(Array.from(cartA));
+    console.log(cartSet);
   }
-  console.log(cartSet);
+
+  // for (let rollData of rollArray) {
+  //   const cartRoll = createCartRoll(rollData.type, rollData.glazing, rollData.size, rollData.basePrice);
+  //   fillCart(cartRoll);
+
+  // }
 }
+console.log(cartSet);
+
 
 function saveToLocalStorage() {
   const rollArray = Array.from(cartSet);
@@ -262,9 +291,6 @@ function createCartRoll(rollType, rollGlazing, packSize, rollPrice) {
 let totalPrice = 0;
 
 if (document.URL.includes("shoppingcart.html")) {
-
-
-
   //function to populate cart with items based on template
   function fillCart(item) {
     //grab reference to cart item template
@@ -293,6 +319,7 @@ if (document.URL.includes("shoppingcart.html")) {
     //add our newly created elements
     cartGallery.append(cartElement);
 
+
     //remove cart elements
     let deleteButton = cartElement.querySelector('#deletebun');
     deleteButton.onclick = (() => {
@@ -317,13 +344,13 @@ if (document.URL.includes("shoppingcart.html")) {
 
   }
 
-}
 
-if (localStorage.getItem('storedRolls') != null) {
-  retrieveFromLocalStorage();
-}
-// else {
-//   (console.log('asdfghjklcart: ' + cartSet))
-// }
 
+
+  // }
+
+  // else {
+  //   (console.log('asdfghjklcart: ' + cartSet))
+  // }
+}
 
