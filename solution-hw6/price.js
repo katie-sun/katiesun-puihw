@@ -4,10 +4,6 @@ if (localStorage.getItem('storedRolls') != null) {
   retrieveFromLocalStorage();
 }
 
-// if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
-//https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
-
-
 //set up arrays
 
 //glazes and prices array
@@ -65,7 +61,6 @@ if (document.URL.includes("productdetail.html")) {
 // Set constants + variables
 let basePrice = 2.49;
 let glazingPrice = 0.00;
-// let packSize = 1;
 let packPrice = 1;
 
 //function to trigger price update based on user selections in the drop down
@@ -106,24 +101,16 @@ cart = [];
 
 //Parse the URL parameter and store the current roll type as a variable
 
-// get the query string from the URL 
 const queryString = window.location.search;
-
-// use the query string to create a URLSearchParams object
 const params = new URLSearchParams(queryString);
-
-// access the parameter we want using the "get" method (e.g. stuff after roll)
 const chosenRoll = params.get('roll');
 
 // variable = chosenRoll (which is storing the current roll type as a variable)
 
 
-
 // Use the URL parameter to update page
 
-if (document.URL.includes("productdetail.html")) {  //resource: https://www.w3schools.com/jsrEF/prop_doc_url.asp
-  //https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
-
+if (document.URL.includes("productdetail.html")) {
 
   const rollName = chosenRoll + ' cinnamon roll';
   const rollBasePrice = rolls[chosenRoll].basePrice;
@@ -193,12 +180,13 @@ function retrieveFromLocalStorage() {
   }
 
 }
+//log cart after each
 console.log(cartSet);
 
 //function to save to local storage as a string
 function saveToLocalStorage() {
   const rollArray = Array.from(cartSet);
-
+  //convert array to string
   const rollArrayString = JSON.stringify(rollArray);
 
   localStorage.setItem('storedRolls', rollArrayString);
@@ -262,6 +250,8 @@ if (document.URL.includes("shoppingcart.html")) {
       document.querySelector("#sc_totalprice").innerText = "$ " + newTotalPrice.toFixed(2);
       //delete item from cart
       cartSet.delete(item);
+
+      //update local storage when each item is removed + log in console
       saveToLocalStorage();
       console.log(cartSet);
 
