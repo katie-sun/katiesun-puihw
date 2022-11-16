@@ -58,19 +58,19 @@ h6 {
 }
 
 #pagemargin{
-  margin-left: 20px;
-  margin-right: 85px;
+  margin-left: 30px;
+  margin-right: 90px;
   margin-top: 40px;
 }
 
 
 #gallery{
   /* background-color: green; */
-  flex-grow: 10.8;
+  flex-grow: 10.5;
 }
 
 #selectorbar{
-  flex-grow: 1;
+  flex-grow: 3;
   text-align: center;
 }
 
@@ -92,6 +92,7 @@ h6 {
 
 #textheader{
   flex-grow: 5;
+  margin-left: 20px;
 }
 
 #counter{
@@ -122,9 +123,10 @@ h6 {
 .verticalline2{
   border-left: 1px solid lightgrey;
   height: 700px;
-  flex-grow: 2;
+  flex-grow: 1.5;
   margin-left: 30px;
   margin-right: 30px;
+  box-sizing: border-box;
 }
 
 
@@ -133,6 +135,7 @@ h6 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-left: 15px;
   justify-content: space-around;
   align-content: space-between;
 }
@@ -283,8 +286,9 @@ h6 {
 	align-content: flex-start;
   width: 100%;
   min-width: 400px;
-  max-width: 500px;
+  max-width: 465px;
   align-items: flex-end;
+  margin-right: 15px;
 }
 
 #card_image{
