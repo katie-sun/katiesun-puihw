@@ -122,7 +122,7 @@ h6 {
 
 .verticalline2{
   border-left: 1px solid lightgrey;
-  height: 700px;
+  height: 560px;
   flex-grow: 1.5;
   margin-left: 30px;
   margin-right: 30px;
@@ -327,10 +327,20 @@ h6 {
 	margin-right: -3px;
 }
 
-@media only screen and (max-width: 700px) {
-  .gallery{
-    margin-right: 10px;
-    margin-left: -100px;
-    flex-grow: 2;
+@media only screen and (max-width: 1200px) {
+  .colorbox{
+    width: 50%;
   }
+  
+  #colorgrid{
+    width: 50%
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  #cardgallery{
+    display: block;
+  }
+
+  
 }
