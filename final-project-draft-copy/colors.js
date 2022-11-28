@@ -7,62 +7,10 @@ class Color {
     this.hexCode = hexCode;
     this.dayCounter = dayCounter;
     this.imageFile = imageFile;
-
-    // this.updateElement = updateElement(this.hexCode, this.dayCounter, this.imageFile)
   }
 
-  // updateElement() {
-  //   console.log('Updating Element!');
-  // }
 }
 
-
-// const pantoneImage = '.Assets/fp4/' + cardInfo[color].imageFile;
-
-
-/*
-class Roll {
-  constructor(rollType, rollGlazing, packSize, rollPrice) {
-    this.type = rollType;
-    this.glazing = rollGlazing; // this is a string-- need to get the price adaptation based on the string to calculate total price
-    this.size = packSize; //need to get pack size adjustment based on pack size
-    this.basePrice = rollPrice;
-
-    this.calculatedPrice = calculatePrice(this.basePrice, glazePriceMap[this.glazing], packPriceMap[this.size]);
-  }
-}
-
-*/
-
-// function updateElement() {
-//   const imageElement = document.querySelector("#meshgradient");
-//   const hexElement = document.querySelector("#hexcode");
-//   const counterElement = document.querySelector('#counternumber');
-
-//   // imageElement.src = "Assets/fp4/" + this.imageFile;
-//   imageElement.src = "Assets/fp4/black-pantone.jpg";
-//   // hexElement.innerText = this.hexCode;
-//   hexElement.innerHTML = "#011B10";
-
-//   // counterElement.innerText = this.dayCounter;
-//   counterElement.innerHTML = 3;
-
-// }
-
-//for each element if Object.keys(cardInfo[1]) = the ID, then run using Object.values
-
-// let selectGlaze = document.querySelector("#glazes");
-
-// for (let i = 0; i < glazeInfo.length; i++) {
-//   // create HTML element
-//   const option = document.createElement('option');
-//   // access value in array
-//   option.value = glazeInfo[i].glazingOptions;
-//   // update blank HTML w/type of glaze 
-//   option.innerHTML = glazeInfo[i].glazingOptions;
-//   // append to HTML element
-//   selectGlaze.appendChild(option);
-// }
 
 resource: https://stackoverflow.com/questions/28444457/get-id-of-element-clicked
 
@@ -90,35 +38,6 @@ document.addEventListener('click', function (e) {
 
   console.log(clickedItem);
 }, false);
-
-
-
-// const testing = document.getElementsByClassName("colorbox");
-
-// const buttonPressed = e => {
-//   console.log(e.target.id);  // Get ID of Clicked Element
-// }
-
-// for (let buttonf of testing) {
-//   buttonf.addEventListener("click", buttonPressed);
-// }
-
-
-// function searchArray(clickedItem) {
-
-//   const test = clickedItem.value;
-//   console.log(test);
-
-//   for (let i = 0; i < cardInfo.length; i++) {
-//     if (cardInfo[i].colorID == clickedItem.value) {
-//       // return cardInfo[i];
-//       console.log(cardInfo[i]);
-//     }
-//   }
-// }
-
-// const resulttest = searchArray("darkgreen", cardInfo);
-// console.log(resulttest);
 
 
 function populateHtml() {
@@ -150,31 +69,62 @@ function populateHtml() {
   })
 }
 
-// $(function () {
-//   console.log("dom finished loading");
 
 
-//   $("#colorbox").on('click', function () {
-//     console.log("colorbox clicked");
-
-//     var id = $(this).attr('id');
-//     alert(cardInfo[id].hexCode);
-
-//   });
-// });
-
-// function updateElement(hexCode, dayCounter, imageFile) {
-//   console.log('Running the updateElement function!')
-
-//   const chosenCard = ".'";
+// function updateElement() {
 //   const imageElement = document.querySelector("#meshgradient");
 //   const hexElement = document.querySelector("#hexcode");
-//   const counterElement = document.querySelector("#counternumber");
+//   const counterElement = document.querySelector('#counternumber');
 
-//   hexElement.innerHTML = hexCode;
-//   counterElement.innerHTML = dayCounter;
-//   // imageElement.src = "Assets/fp4/" + imageFile;
+//   // imageElement.src = "Assets/fp4/" + this.imageFile;
+//   imageElement.src = "Assets/fp4/black-pantone.jpg";
+//   // hexElement.innerText = this.hexCode;
+//   hexElement.innerHTML = "#011B10";
+
+//   // counterElement.innerText = this.dayCounter;
+//   counterElement.innerHTML = 3;
 
 // }
 
+//for each element if Object.keys(cardInfo[1]) = the ID, then run using Object.values
 
+// let selectGlaze = document.querySelector("#glazes");
+
+// for (let i = 0; i < glazeInfo.length; i++) {
+//   // create HTML element
+//   const option = document.createElement('option');
+//   // access value in array
+//   option.value = glazeInfo[i].glazingOptions;
+//   // update blank HTML w/type of glaze 
+//   option.innerHTML = glazeInfo[i].glazingOptions;
+//   // append to HTML element
+//   selectGlaze.appendChild(option);
+// }
+
+
+// const testing = document.getElementsByClassName("colorbox");
+
+// const buttonPressed = e => {
+//   console.log(e.target.id);  // Get ID of Clicked Element
+// }
+
+// for (let buttonf of testing) {
+//   buttonf.addEventListener("click", buttonPressed);
+// }
+
+
+// function searchArray(clickedItem) {
+
+//   const test = clickedItem.value;
+//   console.log(test);
+
+//   for (let i = 0; i < cardInfo.length; i++) {
+//     if (cardInfo[i].colorID == clickedItem.value) {
+//       // return cardInfo[i];
+//       console.log(cardInfo[i]);
+//     }
+//   }
+// }
+
+// const resulttest = searchArray("darkgreen", cardInfo);
+// console.log(resulttest);

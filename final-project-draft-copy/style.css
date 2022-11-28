@@ -204,22 +204,22 @@ h6 {
   background-color: #011B10;
 }
 
-#darkgreen{
+#forest{
   background-color: #133A1B;
 }
 
-#midgreen{
+#olive{
   background-color: #819F5A;
 }
 
-#sagegreen{
+#sage{
   background-color: #B7BF96;
 }
 
 #yellowgreen{
   background-color: #E4DEAE;
 }
-#navyblue{
+#navy{
   background-color: #03045E;
 }
 #cerulean{
@@ -237,43 +237,43 @@ h6 {
   background-color: #CAF0F8;
 }
 
-#hx11{
+#orange{
   background-color: #E5933F;
 }
 
-#hx12{
+#tangerine{
   background-color: #EDAA5B;
 }
 
-#hx13{
+#golden{
   background-color: #FFC121;
 }
 
-#hx14{
+#sunshine{
   background-color: #FFCD4B;
 }
 
-#hx15{
+#duck{
   background-color: #FFDC72;
 }
 
-#hx16{
+#wicked{
   background-color: #681740;
 }
 
-#hx17{
+#raspberry{
   background-color: #A8234C;
 }
 
-#hx18{
+#salmon{
   background-color: #E3534C;
 }
 
-#hx19{
+#peaches{
   background-color: #FA7C5A;
 }
 
-#hx20{
+#creamsicle{
   background-color: #FFA874;
 }
 
@@ -311,6 +311,16 @@ h6 {
   height: 30%;
   max-width: 400px;
   padding-bottom: 40px;
+}
+
+#colordescription{
+  margin-bottom: 0px;
+  font-size: 30px;
+}
+
+#hexcode{
+  margin-top: 10px;
+  color: grey;
 }
 
 .leftmargintext{
