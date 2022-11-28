@@ -31,7 +31,7 @@
 
             <div id="counter">
               <h6>DAY</h6>
-              <h5>100</h5>
+              <h5 id="counternumber">20</h5>
             </div>
 
           </div>
@@ -39,16 +39,18 @@
           <div id="cardgallery">
             <!-- <div id="grid"> -->
             <div id="colorgrid">
-              <div class="colorbox" id="hx1"></div>
-              <div class="colorbox" id="hx2"></div>
-              <div class="colorbox" id="hx3"></div>
+              <div class="colorbox" id="hx1" onclick="changeColor()"></div>
+              <div class="colorbox" id="hx2" onclick="updateElement()"></div>
+              <div class="colorbox" id="hx3">
+                <a href="index.html?color=midgreen"></a>
+              </div>
               <div class="colorbox" id="hx4"></div>
               <div class="colorbox" id="hx5"></div>
               <div class="colorbox" id="hx6"></div>
               <div class="colorbox" id="hx7"></div>
               <div class="colorbox" id="hx8"></div>
               <div class="colorbox" id="hx9"></div>
-              <div class="colorbox" id="hx10"></div>
+              <!-- <div class="colorbox" id="hx10"></div>
               <div class="colorbox" id="hx11"></div>
               <div class="colorbox" id="hx12"></div>
               <div class="colorbox" id="hx13"></div>
@@ -58,7 +60,7 @@
               <div class="colorbox" id="hx17"></div>
               <div class="colorbox" id="hx18"></div>
               <div class="colorbox" id="hx19"></div>
-              <div class="colorbox" id="hx20"></div>
+              <div class="colorbox" id="hx20"></div> -->
 
             <!-- </div> -->
             </div>
@@ -67,13 +69,14 @@
 
             <div id="largecard">
               
-              <div class=gradient id="card_image">
-                <!-- <img id="meshgradient" src="./Assets/fp4/meshgradient.jpg" alt="BOOMBOOM"/> -->
+              <div id=gradient class="card_image">
+                
+                <img id="meshgradient" src="./Assets/fp4/meshgradient.jpg" alt="BOOMBOOM"/>
               </div>
 
               <div id="largecard_text"> 
                 <h2 class="leftmargintext">PANTONE<span id="trademark">®</span></h2>
-                <h3 class="leftmargintext">Day 100</h3>
+                <h3 class="leftmargintext" id="hexcode">Day 20</h3>
               </div>
 
             </div>
@@ -85,5 +88,6 @@
 
     </div> <!--page margin end div-->
 
+  <script type="text/javascript" src="colors.js"></script>  
   </body>
 </html>
