@@ -33,9 +33,7 @@ document.addEventListener('click', function (e) {
       descriptorElement.innerHTML = cardInfo[i].colorID;
 
     }
-
   }
-
   console.log(clickedItem);
 }, false);
 

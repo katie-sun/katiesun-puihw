@@ -7,6 +7,7 @@
   </head>
 
   <body onload="populateHtml()" id="background">
+
     <div id="pagemargin">
     
       <div id="verticalsplit">
@@ -38,7 +39,7 @@
 
           <div id="cardgallery">
             <!-- <div id="grid"> -->
-            <div id="colorgrid">
+            <div class="darkmode-ignore" id="colorgrid">
 
 
             <!-- </div> -->
@@ -53,7 +54,7 @@
                 <img id="meshgradient" src="./Assets/fp4/meshgradient.jpg" alt="BOOMBOOM"/>
               </div>
 
-              <div id="largecard_text"> 
+              <div class="darkmode-ignore" id="largecard_text"> 
                 <h2 class="leftmargintext">PANTONE<span id="trademark">®</span></h2>
                 <h3 class="leftmargintext" id="colordescription"></h3>
                 <h3 class="leftmargintext" id="hexcode">Day 20</h3>
@@ -67,6 +68,14 @@
       </div>
 
     </div> <!--page margin end div-->
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+      }
+      window.addEventListener('load', addDarkmodeWidget);
+    </script>
 
   <script type="text/javascript" src="colors.js"></script>  
   <script type="text/javascript" src="cardinfo.js"></script>  

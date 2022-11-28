@@ -1,5 +1,5 @@
 #background{
-  background-color: #F5F5F5;
+  background-color: #f3efef;
 }
 /* font formatting */
 
@@ -280,6 +280,7 @@ h6 {
 
 #largecard{
   /* flex-grow: 6; */
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -306,20 +307,22 @@ h6 {
 }
 
 #largecard_text{
-  background-color: white;
+  background-color: #ffffff;
   width: 100%;
   height: 30%;
   max-width: 400px;
+  max-height: 155.7px;
   padding-bottom: 40px;
 }
 
 #colordescription{
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   font-size: 30px;
+  margin-top: 15px;
 }
 
 #hexcode{
-  margin-top: 10px;
+  margin-top: 15px;
   color: grey;
 }
 
@@ -337,6 +340,12 @@ h6 {
 	margin-top: -4px;
 	margin-left: -3px;
 	margin-right: -3px;
+}
+
+.colorbox:hover{
+  cursor: pointer;
+  transition: all .25s ease-in-out; 
+  transform: scale(1.1); 
 }
 
 @media only screen and (max-width: 1200px) {
