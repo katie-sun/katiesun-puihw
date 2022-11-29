@@ -2,7 +2,7 @@ let cardInfo = [
   {
     idnumber: 1,
     colorID: "black",
-    hexCode: '#011B10',
+    hexCode: '#1c1c1d',
     dayCounter: 3,
     imageFile: "black-pantone.jpg"
   },
@@ -10,7 +10,7 @@ let cardInfo = [
   {
     idnumber: 2,
     colorID: "forest",
-    hexCode: '#133A1B',
+    hexCode: '#46522E',
     dayCounter: 5,
     imageFile: "forest-pantone.jpg"
   },
@@ -18,7 +18,7 @@ let cardInfo = [
   {
     idnumber: 3,
     colorID: "olive",
-    hexCode: '#819F5A',
+    hexCode: '#869C60',
     dayCounter: 7,
     imageFile: "olive-pantone.jpg"
   },
@@ -57,10 +57,10 @@ let cardInfo = [
 
   {
     idnumber: 8,
-    colorID: "robinegg",
+    colorID: "ocean",
     hexCode: '#00B4D8',
     dayCounter: 8,
-    imageFile: "robinegg-pantone.jpg"
+    imageFile: "ocean-pantone.jpg"
   },
 
   {
@@ -81,18 +81,18 @@ let cardInfo = [
 
   {
     idnumber: 11,
-    colorID: "orange",
-    hexCode: '#EDAA5B',
+    colorID: "rosegold",
+    hexCode: '#E38360',
     dayCounter: 13,
-    imageFile: "orange-pantone.jpg"
+    imageFile: "rosegold-pantone.jpg"
   },
 
   {
     idnumber: 12,
-    colorID: "tangerine",
+    colorID: "rainyday",
     hexCode: '#FFC121',
     dayCounter: 14,
-    imageFile: "tangerine-pantone.jpg"
+    imageFile: "rainyday-pantone.jpg"
   },
 
   {
@@ -120,42 +120,42 @@ let cardInfo = [
 
   {
     idnumber: 16,
-    colorID: "wicked",
+    colorID: "rose",
     hexCode: '#681740',
     dayCounter: 18,
-    imageFile: "wicked-pantone.jpg"
+    imageFile: "rose-pantone.jpg"
   },
 
   {
     idnumber: 17,
-    colorID: "raspberry",
-    hexCode: '#681740',
+    colorID: "poppy",
+    hexCode: '#CD4428',
     dayCounter: 19,
-    imageFile: "raspberry-pantone.jpg"
+    imageFile: "poppy-pantone.jpg"
   },
 
   {
     idnumber: 18,
-    colorID: "salmon",
-    hexCode: '#681740',
+    colorID: "blush",
+    hexCode: '#D6686B',
     dayCounter: 20,
-    imageFile: "salmon-pantone.jpg"
+    imageFile: "blush-pantone.jpg"
   },
 
   {
     idnumber: 19,
-    colorID: "peaches",
-    hexCode: '#681740',
+    colorID: "flora",
+    hexCode: '#D195A3',
     dayCounter: 5,
-    imageFile: "peaches-pantone.jpg"
+    imageFile: "flora-pantone.jpg"
   },
 
   {
     idnumber: 20,
-    colorID: "creamsicle",
-    hexCode: '#681740',
+    colorID: "bluebell",
+    hexCode: '#AD97BA',
     dayCounter: 5,
-    imageFile: "creamsicle-pantone.jpg"
+    imageFile: "bluebell-pantone.jpg"
   },
 ];
 

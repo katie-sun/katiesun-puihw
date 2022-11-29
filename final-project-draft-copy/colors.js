@@ -16,10 +16,18 @@ resource: https://stackoverflow.com/questions/28444457/get-id-of-element-clicked
 
 document.addEventListener('click', function (e) {
   let clickedItem = e.target.id;
+  // let removecontainer = document.getElementById("gradient2");
+  // let addgradient = document.createElement("img")
 
+
+  // removecontainer.removeAttribute("id");
+  // addgradient.setAttribute("id", "meshgradient");
+
+  // removecontainer.appendChild(addgradient);
 
   for (let i = 0; i < cardInfo.length; i++) {
     if (cardInfo[i].colorID == clickedItem) {
+
       const hexElement = document.querySelector('#hexcode');
       hexElement.innerHTML = cardInfo[i].hexCode;
 
@@ -31,6 +39,9 @@ document.addEventListener('click', function (e) {
 
       const descriptorElement = document.querySelector('#colordescription');
       descriptorElement.innerHTML = cardInfo[i].colorID;
+
+
+
 
     }
   }
@@ -56,7 +67,7 @@ function populateHtml() {
     colorBox.classList.add("colorbox");
     //add ID for individual background colors
     colorBox.id = colorcard.colorID;
-    colorBox.setAttribute('onclick', 'updateElement()')
+    // colorBox.setAttribute('onclick', 'updateElement()')
 
     // let hexlabel = document.createElement("div")
     // hexlabel.textContent = colorcard.hexCode;

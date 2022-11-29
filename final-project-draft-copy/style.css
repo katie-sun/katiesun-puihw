@@ -3,14 +3,14 @@
 }
 /* font formatting */
 
-h1 {
+h2 {
   font-family: Helvetica, sans-serif;
   font-size: 60px;
   margin-bottom: -15px;
 }
 
 /* card Pantone font*/
-h2 {
+h4 {
   font-family: Helvetica, sans-serif;
   font-size: 40px;
   margin-bottom: -15px;
@@ -25,7 +25,7 @@ h3{
   margin-left: 2px;
 }
 
-h4 {
+h1 {
   font-family: Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 100;
@@ -151,13 +151,13 @@ h6 {
 
 }
 
-/* #gradient {
+/*#gradient2 {
 	background: linear-gradient(-60deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, rgb(255, 191, 0));
 	background-size: 400% 400%;
 	animation: gradient 5s ease infinite;
-	/* height: 100vh; */
+	/* height: 100%; */
 
-
+/* 
   @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -168,7 +168,7 @@ h6 {
 	100% {
 		background-position: 0% 50%;
 	}
-} 
+}  */
 
 
 .colorbox{
@@ -201,15 +201,15 @@ h6 {
 }
 
 #black{
-  background-color: #011B10;
+  background-color: #1c1c1d;
 }
 
 #forest{
-  background-color: #133A1B;
+  background-color: #628742;
 }
 
 #olive{
-  background-color: #819F5A;
+  background-color: #869C60;
 }
 
 #sage{
@@ -220,13 +220,13 @@ h6 {
   background-color: #E4DEAE;
 }
 #navy{
-  background-color: #03045E;
+  background-color: #262F38;
 }
 #cerulean{
   background-color: #0077B6;
 }
-#robinegg{
-  background-color: #00B4D8;
+#ocean{
+  background-color: #7CAAC4;
 }
 
 #tiffanys{
@@ -237,12 +237,12 @@ h6 {
   background-color: #CAF0F8;
 }
 
-#orange{
+#rainyday{
   background-color: #E5933F;
 }
 
-#tangerine{
-  background-color: #EDAA5B;
+#bluebell{
+  background-color: #AD97BA;
 }
 
 #golden{
@@ -257,24 +257,24 @@ h6 {
   background-color: #FFDC72;
 }
 
-#wicked{
-  background-color: #681740;
+#rose{
+  background-color: #681729;
 }
 
-#raspberry{
-  background-color: #A8234C;
+#poppy{
+  background-color: #CD4428;
 }
 
-#salmon{
-  background-color: #E3534C;
+#blush{
+  background-color: #D6686B;
 }
 
-#peaches{
-  background-color: #FA7C5A;
+#flora{
+  background-color: #D195A3;
 }
 
-#creamsicle{
-  background-color: #FFA874;
+#rosegold{
+  background-color: #E38360;
 }
 
 
@@ -307,7 +307,7 @@ h6 {
 }
 
 #largecard_text{
-  background-color: #ffffff;
+  background-color: #fbfafa;
   width: 100%;
   height: 30%;
   max-width: 400px;
