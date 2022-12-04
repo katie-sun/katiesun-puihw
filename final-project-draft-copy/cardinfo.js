@@ -4,7 +4,9 @@ let cardInfo = [
     colorID: "black",
     hexCode: '#1c1c1d',
     dayCounter: 3,
-    imageFile: "black-pantone.jpg"
+    imageFile: "black-pantone.jpg",
+    alt: "painting of two koi fish, one red and one orange, that arc to form a complete circle on a black background",
+    group: 'blues'
   },
 
   {
@@ -12,7 +14,9 @@ let cardInfo = [
     colorID: "forest",
     hexCode: '#46522E',
     dayCounter: 5,
-    imageFile: "forest-pantone.jpg"
+    imageFile: "forest-pantone.jpg",
+    alt: "painting of two olive trees and a path leading out to a lake",
+    group: 'greens'
   },
 
   {
@@ -20,7 +24,9 @@ let cardInfo = [
     colorID: "olive",
     hexCode: '#869C60',
     dayCounter: 7,
-    imageFile: "olive-pantone.jpg"
+    imageFile: "olive-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE",
+    group: 'greens'
   },
 
   {
@@ -28,7 +34,9 @@ let cardInfo = [
     colorID: "sage",
     hexCode: '#B7BF96',
     dayCounter: 9,
-    imageFile: "sage-pantone.jpg"
+    imageFile: "sage-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE",
+    group: 'greens'
   },
 
   {
@@ -36,7 +44,9 @@ let cardInfo = [
     colorID: "yellowgreen",
     hexCode: '#E4DEAE',
     dayCounter: 1,
-    imageFile: "yellowgreen-pantone.jpg"
+    imageFile: "yellowgreen-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE",
+    group: 'greens'
   },
 
   {
@@ -44,7 +54,9 @@ let cardInfo = [
     colorID: "navy",
     hexCode: '#03045E',
     dayCounter: 4,
-    imageFile: "navy-pantone.jpg"
+    imageFile: "navy-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE",
+    group: 'blues'
   },
 
   {
@@ -52,7 +64,9 @@ let cardInfo = [
     colorID: "cerulean",
     hexCode: '#0077B6',
     dayCounter: 6,
-    imageFile: "cerulean-pantone.jpg"
+    imageFile: "cerulean-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE",
+    group: 'blues'
   },
 
   {
@@ -60,7 +74,9 @@ let cardInfo = [
     colorID: "ocean",
     hexCode: '#00B4D8',
     dayCounter: 8,
-    imageFile: "ocean-pantone.jpg"
+    imageFile: "ocean-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE",
+    group: 'blues'
   },
 
   {
@@ -68,7 +84,8 @@ let cardInfo = [
     colorID: "tiffanys",
     hexCode: '#90E0EF',
     dayCounter: 10,
-    imageFile: "tiffanys-pantone.jpg"
+    imageFile: "tiffanys-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE"
   },
 
   {
@@ -76,7 +93,8 @@ let cardInfo = [
     colorID: "skyblue",
     hexCode: '#E5933F',
     dayCounter: 12,
-    imageFile: "skyblue-pantone.jpg"
+    imageFile: "skyblue-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE"
   },
 
   {
@@ -84,7 +102,8 @@ let cardInfo = [
     colorID: "rosegold",
     hexCode: '#E38360',
     dayCounter: 13,
-    imageFile: "rosegold-pantone.jpg"
+    imageFile: "rosegold-pantone.jpg",
+    alt: "painting of the top section of a ferris wheel in front of a sky blue background with sunset colored clouds"
   },
 
   {
@@ -92,7 +111,8 @@ let cardInfo = [
     colorID: "rainyday",
     hexCode: '#FFC121',
     dayCounter: 14,
-    imageFile: "rainyday-pantone.jpg"
+    imageFile: "rainyday-pantone.jpg",
+    alt: "painting of a windowframe with blurry water droplets and a city skyline background"
   },
 
   {
@@ -100,14 +120,16 @@ let cardInfo = [
     colorID: "golden",
     hexCode: '#FFCD4B',
     dayCounter: 15,
-    imageFile: "golden-pantone.jpg"
+    imageFile: "golden-pantone.jpg",
+    alt: "painting of a girl with brown hair wearing a blue dress with a daisy in her mouth and a bouquet of dasies in her arms on a golden yellow background"
   },
   {
     idnumber: 14,
     colorID: "sunshine",
     hexCode: '#FFDC72',
     dayCounter: 16,
-    imageFile: "sunshine-pantone.jpg"
+    imageFile: "sunshine-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE"
   },
 
   {
@@ -115,7 +137,8 @@ let cardInfo = [
     colorID: "duck",
     hexCode: '#681740',
     dayCounter: 17,
-    imageFile: "duck-pantone.jpg"
+    imageFile: "duck-pantone.jpg",
+    alt: "ENTERALTTEXTKATIE"
   },
 
   {
@@ -123,7 +146,8 @@ let cardInfo = [
     colorID: "rose",
     hexCode: '#681740',
     dayCounter: 18,
-    imageFile: "rose-pantone.jpg"
+    imageFile: "rose-pantone.jpg",
+    alt: "painting of a bush with red roses on a white background"
   },
 
   {
@@ -131,7 +155,8 @@ let cardInfo = [
     colorID: "poppy",
     hexCode: '#CD4428',
     dayCounter: 19,
-    imageFile: "poppy-pantone.jpg"
+    imageFile: "poppy-pantone.jpg",
+    alt: "painting of orange poppies in an olive green field"
   },
 
   {
@@ -139,7 +164,8 @@ let cardInfo = [
     colorID: "blush",
     hexCode: '#D6686B',
     dayCounter: 20,
-    imageFile: "blush-pantone.jpg"
+    imageFile: "blush-pantone.jpg",
+    alt: "painting of two hands with fingers slightly interlaced on a soft pink background"
   },
 
   {
@@ -147,7 +173,8 @@ let cardInfo = [
     colorID: "flora",
     hexCode: '#D195A3',
     dayCounter: 5,
-    imageFile: "flora-pantone.jpg"
+    imageFile: "flora-pantone.jpg",
+    alt: "painting of a white outline of a girl with flowers blooming from her head on a light pink background"
   },
 
   {
@@ -155,7 +182,8 @@ let cardInfo = [
     colorID: "bluebell",
     hexCode: '#AD97BA',
     dayCounter: 5,
-    imageFile: "bluebell-pantone.jpg"
+    imageFile: "bluebell-pantone.jpg",
+    alt: "painting of a forest floor carpeted in bluebells in various shades of purple"
   },
 ];
 
