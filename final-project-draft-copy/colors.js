@@ -103,7 +103,12 @@ function reset() {
   imageElement.src = "./Assets/fp4/meshgradient.jpg";
 }
 
+// document.getElementsByClassName("darkmode-layer darkmode-layer--button").addEventListener('click', changesrc);
 
+function changesrc() {
+  const imageElement = document.querySelector("#plusicon");
+  imageElement.src = "./Assets/fp4/resetwhite.png";
+}
 
 // let filtered = cardInfo.filter(function ())
 
@@ -120,6 +125,7 @@ function arrayRemove(cardInfo, value) {
 
 
 var result = arrayRemove(cardInfo, "blues");
+console.log(result);
 
 
 const greencardtest = cardInfo.filter(function (green) {
@@ -208,14 +214,15 @@ function filter() {
 // console.log(greencards);
 
 //modifying darkmode library
+
 let options = {
   right: '0px',
-  bottom: '1050px',
+  bottom: '1075px',
   // top: '480 px',
   left: '25px', // default: 'unset'
   time: '0.5s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
+  mixColor: '#fbfafa', // default: '#fff'
+  backgroundColor: '#fbfafa',  // default: '#fff'
   buttonColorDark: '#100f2c',  // default: '#100f2c'
   buttonColorLight: '#fff', // default: '#fff'
   saveInCookies: false, // default: true,
@@ -239,30 +246,3 @@ window.addEventListener('load', addDarkmodeWidget);
 
 
 
-
-// const testing = document.getElementsByClassName("colorbox");
-
-// const buttonPressed = e => {
-//   console.log(e.target.id);  // Get ID of Clicked Element
-// }
-
-// for (let buttonf of testing) {
-//   buttonf.addEventListener("click", buttonPressed);
-// }
-
-
-// function searchArray(clickedItem) {
-
-//   const test = clickedItem.value;
-//   console.log(test);
-
-//   for (let i = 0; i < cardInfo.length; i++) {
-//     if (cardInfo[i].colorID == clickedItem.value) {
-//       // return cardInfo[i];
-//       console.log(cardInfo[i]);
-//     }
-//   }
-// }
-
-// const resulttest = searchArray("darkgreen", cardInfo);
-// console.log(resulttest);
