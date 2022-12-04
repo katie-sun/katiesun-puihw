@@ -30,7 +30,7 @@ document.addEventListener('click', function (e) {
       const hexElement = document.querySelector('#hexcode');
       hexElement.innerHTML = cardInfo[i].hexCode;
 
-      const counterElement = document.querySelector('#counternumber');
+      const counterElement = document.querySelector('.counternumber');
       counterElement.innerHTML = cardInfo[i].dayCounter;
 
       const imageElement = document.querySelector('#painting');
@@ -177,7 +177,7 @@ function filter() {
 //modifying darkmode library
 let options = {
   right: '0px',
-  bottom: '1000px',
+  bottom: '1100px',
   // top: '480 px',
   left: '25px', // default: 'unset'
   time: '0.5s', // default: '0.3s'

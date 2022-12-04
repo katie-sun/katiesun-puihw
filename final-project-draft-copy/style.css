@@ -128,7 +128,8 @@ h6 {
 }
 
 
-#counter2{
+#counterresponsive{
+  display: none;
   width: 100px;
   height: 100px;
   text-align: center;
@@ -431,7 +432,7 @@ h6 {
 */
 
 
-@media screen and (max-width: 768px){
+@media only screen and (max-width: 891px){
   #verticalsplit{
     display: block;
   }
@@ -439,6 +440,17 @@ h6 {
   /* .verticalline{
     display: none;
   } */
+
+  #tabletresponsive{
+    display:flex;
+    flex-direction: row-reverse;
+  }
+
+  #counterresponsive{
+    display: block;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
 
   #gallery{
     border-left: 0px solid white;
@@ -477,6 +489,72 @@ h6 {
   }
 
 }
+
+
+@media only screen and (max-width: 750px){
+  #verticalsplit{
+    display: block;
+  }
+
+  /* .verticalline{
+    display: none;
+  } */
+
+  #gallery{
+    border-left: 0px solid white;
+    border-top: 1px solid lightgrey;
+    padding-top: 30px;
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+
+  #colorgrid{
+    border-right: 0px solid white;
+    border-top: 1px solid lightgrey;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-right: 0px;
+  }
+
+  #selectorbar{
+    text-align: left;
+  }
+
+  #cardgallery{
+    flex-direction: column-reverse;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* .verticalline2{
+    display: none;
+  } */
+
+  #counter{
+    display: none;
+  }
+
+  #largecard{
+    margin-left: 0px;
+  }
+
+  #plusicon{
+    margin-top: 20px;
+  }
+
+  #textheader{
+    margin-left: 10px;
+  }
+
+  #pagemargin{
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+}
+
 
 
 /* mobile large
