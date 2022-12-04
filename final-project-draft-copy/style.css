@@ -69,7 +69,7 @@ h6 {
 
 #trademark{
   font-family: Helvetica, sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 2px;
   margin-left: 4px;
 }
@@ -289,29 +289,29 @@ h6 {
   background-color: #B7BF96;
 }
 
-#yellowgreen{
+#laurel{
   background-color: #E4DEAE;
 }
 #navy{
   background-color: #262F38;
 }
 #cerulean{
-  background-color: #0077B6;
+  background-color: #3a4d65;
 }
 #ocean{
   background-color: #7CAAC4;
 }
 
-#tiffanys{
-  background-color: #90E0EF;
+#lupine{
+  background-color: #6598d3;
 }
 
 #skyblue{
-  background-color: #CAF0F8;
+  background-color: #c0dff6;
 }
 
-#rainyday{
-  background-color: #E5933F;
+#ember{
+  background-color: #ca2501;
 }
 
 #bluebell{
@@ -326,7 +326,7 @@ h6 {
   background-color: #FFCD4B;
 }
 
-#duck{
+#amarillo{
   background-color: #FFDC72;
 }
 
@@ -346,8 +346,8 @@ h6 {
   background-color: #D195A3;
 }
 
-#rosegold{
-  background-color: #E38360;
+#carrot{
+  background-color: #d14d25;
 }
 
 

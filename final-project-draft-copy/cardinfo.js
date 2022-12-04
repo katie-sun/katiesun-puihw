@@ -3,7 +3,7 @@ let cardInfo = [
     idnumber: 1,
     colorID: "black",
     hexCode: '#1c1c1d',
-    dayCounter: 3,
+    dayCounter: 11,
     imageFile: "black-pantone.jpg",
     alt: "painting of two koi fish, one red and one orange, that arc to form a complete circle on a black background",
     group: 'blues'
@@ -15,7 +15,7 @@ let cardInfo = [
     hexCode: '#46522E',
     dayCounter: 5,
     imageFile: "forest-pantone.jpg",
-    alt: "painting of two olive trees and a path leading out to a lake",
+    alt: "painting of dark green underwater kelp forest",
     group: 'greens'
   },
 
@@ -25,7 +25,7 @@ let cardInfo = [
     hexCode: '#869C60',
     dayCounter: 7,
     imageFile: "olive-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE",
+    alt: "painting of a dark windowsill with green foliage spilling out outside",
     group: 'greens'
   },
 
@@ -35,17 +35,17 @@ let cardInfo = [
     hexCode: '#B7BF96',
     dayCounter: 9,
     imageFile: "sage-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE",
+    alt: "painting of a tree by a lakeside with hazy soft green vegetation",
     group: 'greens'
   },
 
   {
     idnumber: 5,
-    colorID: "yellowgreen",
+    colorID: "laurel",
     hexCode: '#E4DEAE',
     dayCounter: 1,
-    imageFile: "yellowgreen-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE",
+    imageFile: "laurel-pantone.jpg",
+    alt: "painting of two olive trees and a path leading out to a lake",
     group: 'greens'
   },
 
@@ -55,7 +55,7 @@ let cardInfo = [
     hexCode: '#03045E',
     dayCounter: 4,
     imageFile: "navy-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE",
+    alt: "painting of new york city skyline with glittering lights on a navy background",
     group: 'blues'
   },
 
@@ -65,55 +65,57 @@ let cardInfo = [
     hexCode: '#0077B6',
     dayCounter: 6,
     imageFile: "cerulean-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE",
+    alt: "painting of two blue whales underwater surrounded by bubbles",
     group: 'blues'
   },
 
   {
     idnumber: 8,
-    colorID: "ocean",
-    hexCode: '#00B4D8',
-    dayCounter: 8,
-    imageFile: "ocean-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE",
-    group: 'blues'
+    colorID: "lupine",
+    hexCode: '#6598d3',
+    dayCounter: 10,
+    imageFile: "snow-pantone.jpg",
+    alt: "painting of a snow capped mountain behind bright blue lupines"
   },
 
   {
     idnumber: 9,
-    colorID: "tiffanys",
-    hexCode: '#90E0EF',
-    dayCounter: 10,
-    imageFile: "tiffanys-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE"
+    colorID: "ocean",
+    hexCode: '#00B4D8',
+    dayCounter: 8,
+    imageFile: "ocean-pantone.jpg",
+    alt: "painting of an aquarium tank with blue and silver fish",
+    group: 'blues'
   },
+
 
   {
     idnumber: 10,
     colorID: "skyblue",
-    hexCode: '#E5933F',
-    dayCounter: 12,
-    imageFile: "skyblue-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE"
-  },
-
-  {
-    idnumber: 11,
-    colorID: "rosegold",
     hexCode: '#E38360',
     dayCounter: 13,
-    imageFile: "rosegold-pantone.jpg",
+    imageFile: "skyblue-pantone.jpg",
     alt: "painting of the top section of a ferris wheel in front of a sky blue background with sunset colored clouds"
   },
 
   {
-    idnumber: 12,
-    colorID: "rainyday",
-    hexCode: '#FFC121',
+    idnumber: 11,
+    colorID: "ember",
+    hexCode: '#ca2501',
     dayCounter: 14,
-    imageFile: "rainyday-pantone.jpg",
-    alt: "painting of a windowframe with blurry water droplets and a city skyline background"
+    imageFile: "ember-pantone.jpg",
+    alt: "painting of a vivid orange fire with white sparks"
   },
+
+  {
+    idnumber: 12,
+    colorID: "carrot",
+    hexCode: '#d14d25',
+    dayCounter: 12,
+    imageFile: "carrot-pantone.jpg",
+    alt: "painting of two ducks on a yellow background. the one on the right has its head tilted and is saying 'wow'"
+  },
+
 
   {
     idnumber: 13,
@@ -129,16 +131,16 @@ let cardInfo = [
     hexCode: '#FFDC72',
     dayCounter: 16,
     imageFile: "sunshine-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE"
+    alt: "painting of white daisies with a bright yellow center on a planty background"
   },
 
   {
     idnumber: 15,
-    colorID: "duck",
+    colorID: "amarillo",
     hexCode: '#681740',
     dayCounter: 17,
-    imageFile: "duck-pantone.jpg",
-    alt: "ENTERALTTEXTKATIE"
+    imageFile: "amarillo-pantone.jpg",
+    alt: "painting of a yellow bike in front of a ochre yellow wall in spain"
   },
 
   {
@@ -172,7 +174,7 @@ let cardInfo = [
     idnumber: 19,
     colorID: "flora",
     hexCode: '#D195A3',
-    dayCounter: 5,
+    dayCounter: 3,
     imageFile: "flora-pantone.jpg",
     alt: "painting of a white outline of a girl with flowers blooming from her head on a light pink background"
   },
@@ -181,7 +183,7 @@ let cardInfo = [
     idnumber: 20,
     colorID: "bluebell",
     hexCode: '#AD97BA',
-    dayCounter: 5,
+    dayCounter: 2,
     imageFile: "bluebell-pantone.jpg",
     alt: "painting of a forest floor carpeted in bluebells in various shades of purple"
   },
