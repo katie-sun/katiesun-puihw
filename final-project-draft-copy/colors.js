@@ -11,8 +11,28 @@ class Color {
   }
 
 }
-// resource: https://stackoverflow.com/questions/28444457/get-id-of-element-clicked
 
+//from animate.css documentation 
+const animateCSS = (element, animation, prefix = 'animate__') =>
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    const animationName = `${prefix}${animation}`;
+    const node = document.querySelector(element);
+
+    node.classList.add(`${prefix}animated`, animationName);
+
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+      node.classList.remove(`${prefix}animated`, animationName);
+      resolve('Animation ended');
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd, { once: true });
+  });
+
+
+// resource: https://stackoverflow.com/questions/28444457/get-id-of-element-clicked
 document.addEventListener('click', function (e) {
   let clickedItem = e.target.id;
   // let removecontainer = document.getElementById("gradient2");
@@ -40,14 +60,14 @@ document.addEventListener('click', function (e) {
       const descriptorElement = document.querySelector('#colordescription');
       descriptorElement.innerHTML = cardInfo[i].colorID;
 
-
+      animateCSS('#largecard', 'flipInY');
 
       // const borderElement = document.querySelector(".colorbox");
       // borderElement.setAttribute("id", "borderbox");
     }
   }
 }, false);
-
+// flipElement.classList.remove('animate__animated', 'animate__flipInY');
 
 
 function populateHtml() {
@@ -73,6 +93,16 @@ function populateHtml() {
 
   })
 }
+
+//reset button
+document.getElementById("plusicon").addEventListener('click', reset);
+
+function reset() {
+  const imageElement = document.querySelector("#painting");
+  animateCSS('#largecard', 'fadeIn');
+  imageElement.src = "./Assets/fp4/meshgradient.jpg";
+}
+
 
 
 // let filtered = cardInfo.filter(function ())
@@ -121,6 +151,9 @@ function filter() {
   populateHTMLfilter();
   console.log(greencardtest);
 }
+
+
+
 // const greencards = cardInfo.filter(function (green) {
 //   // let removecards = [];
 //   // for (let i = 0; i < cardInfo.length; i++) {
@@ -177,7 +210,7 @@ function filter() {
 //modifying darkmode library
 let options = {
   right: '0px',
-  bottom: '1100px',
+  bottom: '1050px',
   // top: '480 px',
   left: '25px', // default: 'unset'
   time: '0.5s', // default: '0.3s'
