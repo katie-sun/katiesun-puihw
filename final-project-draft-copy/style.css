@@ -205,29 +205,11 @@ h6 {
 
 }
 
-.gradient2 {
-	background: linear-gradient(-60deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, rgb(255, 191, 0));
-	background-size: 500% 500%;
-	animation: gradient 5s ease infinite;
-	/* height: 100%; */
-}
-  @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-} 
-
 #gradient3 {
 	background: linear-gradient(-60deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, rgb(255, 191, 0));
 	background-size: 500% 500%;
 	animation: gradient 5s ease infinite;
-	/* height: 100%; */
+  max-height: 360px;
 }
 
  @keyframes gradient {

@@ -33,6 +33,7 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
 
 
 // resource: https://stackoverflow.com/questions/28444457/get-id-of-element-clicked
+
 document.addEventListener('click', function (e) {
   let clickedItem = e.target.id;
   // let removecontainer = document.getElementById("gradient2");
@@ -54,8 +55,8 @@ document.addEventListener('click', function (e) {
       counterElement.innerHTML = cardInfo[i].dayCounter;
 
       const imageElement = document.querySelector('#painting');
-      imageElement.classList.remove("opacityhack")
       imageElement.src = "Assets/fp4/" + cardInfo[i].imageFile;
+      imageElement.classList.remove("opacityhack")
       imageElement.alt = cardInfo[i].alt;
 
       const descriptorElement = document.querySelector('#colordescription');
