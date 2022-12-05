@@ -75,7 +75,8 @@ let cardInfo = [
     hexCode: '#6598d3',
     dayCounter: 10,
     imageFile: "snow-pantone.jpg",
-    alt: "painting of a snow capped mountain behind bright blue lupines"
+    alt: "painting of a snow capped mountain behind bright blue lupines",
+    group: 'blues',
   },
 
   {
@@ -95,7 +96,8 @@ let cardInfo = [
     hexCode: '#E38360',
     dayCounter: 13,
     imageFile: "skyblue-pantone.jpg",
-    alt: "painting of the top section of a ferris wheel in front of a sky blue background with sunset colored clouds"
+    alt: "painting of the top section of a ferris wheel in front of a sky blue background with sunset colored clouds",
+    group: 'blues'
   },
 
   {
@@ -104,7 +106,8 @@ let cardInfo = [
     hexCode: '#ca2501',
     dayCounter: 14,
     imageFile: "ember-pantone.jpg",
-    alt: "painting of a vivid orange fire with white sparks"
+    alt: "painting of a vivid orange fire with white sparks",
+    group: 'reds'
   },
 
   {
@@ -113,7 +116,8 @@ let cardInfo = [
     hexCode: '#d14d25',
     dayCounter: 12,
     imageFile: "carrot-pantone.jpg",
-    alt: "painting of two ducks on a yellow background. the one on the right has its head tilted and is saying 'wow'"
+    alt: "painting of two ducks on a yellow background. the one on the right has its head tilted and is saying 'wow'",
+    group: 'reds'
   },
 
 
@@ -123,7 +127,8 @@ let cardInfo = [
     hexCode: '#FFCD4B',
     dayCounter: 15,
     imageFile: "golden-pantone.jpg",
-    alt: "painting of a girl with brown hair wearing a blue dress with a daisy in her mouth and a bouquet of dasies in her arms on a golden yellow background"
+    alt: "painting of a girl with brown hair wearing a blue dress with a daisy in her mouth and a bouquet of dasies in her arms on a golden yellow background",
+    group: 'yellows'
   },
   {
     idnumber: 14,
@@ -131,7 +136,8 @@ let cardInfo = [
     hexCode: '#FFDC72',
     dayCounter: 16,
     imageFile: "sunshine-pantone.jpg",
-    alt: "painting of white daisies with a bright yellow center on a planty background"
+    alt: "painting of white daisies with a bright yellow center on a planty background",
+    group: 'yellows'
   },
 
   {
@@ -140,7 +146,8 @@ let cardInfo = [
     hexCode: '#681740',
     dayCounter: 17,
     imageFile: "amarillo-pantone.jpg",
-    alt: "painting of a yellow bike in front of a ochre yellow wall in spain"
+    alt: "painting of a yellow bike in front of a ochre yellow wall in spain",
+    group: 'yellows'
   },
 
   {
@@ -149,7 +156,8 @@ let cardInfo = [
     hexCode: '#681740',
     dayCounter: 18,
     imageFile: "rose-pantone.jpg",
-    alt: "painting of a bush with red roses on a white background"
+    alt: "painting of a bush with red roses on a white background",
+    group: 'reds'
   },
 
   {
@@ -158,7 +166,8 @@ let cardInfo = [
     hexCode: '#CD4428',
     dayCounter: 19,
     imageFile: "poppy-pantone.jpg",
-    alt: "painting of orange poppies in an olive green field"
+    alt: "painting of orange poppies in an olive green field",
+    group: 'reds'
   },
 
   {
@@ -167,7 +176,8 @@ let cardInfo = [
     hexCode: '#D6686B',
     dayCounter: 20,
     imageFile: "blush-pantone.jpg",
-    alt: "painting of two hands with fingers slightly interlaced on a soft pink background"
+    alt: "painting of two hands with fingers slightly interlaced on a soft pink background",
+    group: 'reds'
   },
 
   {
@@ -176,7 +186,8 @@ let cardInfo = [
     hexCode: '#D195A3',
     dayCounter: 3,
     imageFile: "flora-pantone.jpg",
-    alt: "painting of a white outline of a girl with flowers blooming from her head on a light pink background"
+    alt: "painting of a white outline of a girl with flowers blooming from her head on a light pink background",
+    group: 'reds'
   },
 
   {
@@ -185,7 +196,8 @@ let cardInfo = [
     hexCode: '#AD97BA',
     dayCounter: 2,
     imageFile: "bluebell-pantone.jpg",
-    alt: "painting of a forest floor carpeted in bluebells in various shades of purple"
+    alt: "painting of a forest floor carpeted in bluebells in various shades of purple",
+    group: 'reds'
   },
 ];
 

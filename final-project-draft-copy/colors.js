@@ -54,6 +54,7 @@ document.addEventListener('click', function (e) {
       counterElement.innerHTML = cardInfo[i].dayCounter;
 
       const imageElement = document.querySelector('#painting');
+      imageElement.classList.remove("opacityhack")
       imageElement.src = "Assets/fp4/" + cardInfo[i].imageFile;
       imageElement.alt = cardInfo[i].alt;
 
@@ -99,8 +100,14 @@ document.getElementById("plusicon").addEventListener('click', reset);
 
 function reset() {
   const imageElement = document.querySelector("#painting");
+  imageElement.classList.add("opacityhack");
   animateCSS('#largecard', 'fadeIn');
   imageElement.src = "./Assets/fp4/meshgradient.jpg";
+
+  let container = document.querySelector("#colorgrid");
+  container.innerHTML = "";
+
+  populateHtml();
 }
 
 // document.getElementsByClassName("darkmode-layer darkmode-layer--button").addEventListener('click', changesrc);
@@ -110,108 +117,92 @@ function changesrc() {
   imageElement.src = "./Assets/fp4/resetwhite.png";
 }
 
-// let filtered = cardInfo.filter(function ())
 
 
-// Using filter method to create a remove method
-function arrayRemove(cardInfo, value) {
-  let test = cardInfo.filter(function (shade) {
-    if (shade.group == value) {
+document.getElementById("greenbutton").addEventListener('click', greenButton);
+document.getElementById("bluebutton").addEventListener('click', blueButton);
+document.getElementById("redbutton").addEventListener('click', redButton);
+document.getElementById("yellowbutton").addEventListener('click', yellowButton);
+
+function greenButton() {
+  let container = document.querySelector("#colorgrid");
+  container.innerHTML = "";
+
+  let greenswatches = cardInfo.filter(function (greens) {
+    if (greens.group == "greens") {
       return true;
     }
   });
-  console.log(test);
+
+  greenswatches.forEach((color) => {
+    createSwatch(color);
+  });
+}
+
+function blueButton() {
+  let container = document.querySelector("#colorgrid");
+  container.innerHTML = "";
+
+  let blueswatches = cardInfo.filter(function (blues) {
+    if (blues.group == "blues") {
+      return true;
+    }
+  });
+
+  blueswatches.forEach((color) => {
+    createSwatch(color);
+  });
 }
 
 
-var result = arrayRemove(cardInfo, "blues");
-console.log(result);
+function redButton() {
+  let container = document.querySelector("#colorgrid");
+  container.innerHTML = "";
 
+  let redswatches = cardInfo.filter(function (reds) {
+    if (reds.group == "reds") {
+      return true;
+    }
+  });
 
-const greencardtest = cardInfo.filter(function (green) {
-  // let removecards = [];
-  // for (let i = 0; i < cardInfo.length; i++) {
-  if (green.group == 'greens') {
-    return true;
-  }
-});
-
-function populateHTMLfilter() {
-  let container = document.getElementById("colorgrid");
-
-  test.forEach((color) => {
-    let colorcard = new Color(color.idnumber, color.colorID, color.hexCode, color.dayCounter, color.imageFile, color.alt)
-
-    let colorBox = document.createElement("div");
-    colorBox.classList.add("colorbox");
-    colorBox.id = colorcard.colorID;
-
-    container.appendChild(colorBox);
-
-  })
+  redswatches.forEach((color) => {
+    createSwatch(color);
+  });
 }
 
 
-function filter() {
-  cardInfo = [];
-  populateHTMLfilter();
-  console.log(greencardtest);
+function yellowButton() {
+  let container = document.querySelector("#colorgrid");
+  container.innerHTML = "";
+
+  let yellowswatches = cardInfo.filter(function (yellows) {
+    if (yellows.group == "yellows") {
+      return true;
+    }
+  });
+
+  yellowswatches.forEach((color) => {
+    createSwatch(color);
+  });
 }
 
 
+function createSwatch(color) {
+  let container = document.querySelector("#colorgrid");
 
-// const greencards = cardInfo.filter(function (green) {
-//   // let removecards = [];
-//   // for (let i = 0; i < cardInfo.length; i++) {
-//   if (green.group == 'greens') {
-//     // removecards.push
-//     return true;
-//   }
-// });
+  let colorcard = new Color(color.idnumber, color.colorID, color.hexCode, color.dayCounter, color.imageFile, color.alt)
 
-// console.log(greencards);
-
-
+  //populate DOM
+  let colorBox = document.createElement("div");
+  //add colorbox css styling
+  colorBox.classList.add("colorbox");
+  //add ID for individual background colors
+  colorBox.id = colorcard.colorID;
 
 
+  container.appendChild(colorBox);
+}
 
-// const greencards = cardInfo.filter(function (green) {
-//   let removecards = [];
-//   if (green.group != 'greens') {
-//     cardInfo.splice
-//   }
-// });
-
-// console.log(greencards);
-
-// let greensButton = document.querySelector("#plusicon");
-// greensButton.onclick = (() => {
-
-// }
-
-// //remove cart elements
-// let deleteButton = cartElement.querySelector('#deletebun');
-// deleteButton.onclick = (() => {
-//   cartElement.remove();
-
-//   let totalPrice = parseFloat(document.querySelector("#sc_totalprice").innerText.slice(2));
-//   let rollPrice = parseFloat(cartElement.querySelector("#sc_individualitemprice").innerText.slice(1)).toFixed(2);
-//   //change total price each time a cart element is removed
-//   let newTotalPrice = totalPrice - rollPrice;
-
-//   document.querySelector("#sc_totalprice").innerText = "$ " + newTotalPrice.toFixed(2);
-//   //delete item from cart
-//   cartSet.delete(item);
-
-// })
-
-
-
-//if green.group === 'greens', then do nothing
-//else: remove from array (but how do i allow this to reset in between clicks?)
-
-// const greencards = cardInfo.filter(green => green.group === 'greens');
-// console.log(greencards);
 
 //modifying darkmode library
 
