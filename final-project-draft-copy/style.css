@@ -449,7 +449,7 @@ h6 {
 }
 */
 
-.darkmode-toggle {
+/* .darkmode-toggle {
   margin-right: 169vh !important;
   margin-bottom: 88vh !important;
 }
@@ -457,7 +457,7 @@ h6 {
 .darkmode-layer--button{
   margin-right: 169vh !important;
   margin-bottom: 88vh !important;
-}
+} */
 
 @media only screen and (max-width: 1024px){
   .colorbox{

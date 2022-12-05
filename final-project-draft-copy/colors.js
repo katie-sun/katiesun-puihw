@@ -108,6 +108,15 @@ function reset() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
 
+  const hexElement = document.querySelector('#hexcode');
+  hexElement.innerHTML = "20 Colors"
+
+  const counterElement = document.querySelector('.counternumber');
+  counterElement.innerHTML = "20"
+
+  const descriptorElement = document.querySelector('#colordescription');
+  descriptorElement.innerHTML = "20 Days"
+
   populateHtml();
 }
 
