@@ -207,29 +207,32 @@ function createSwatch(color) {
 
 //modifying darkmode library
 
-let options = {
-  right: '0px',
-  bottom: '1075px',
-  // top: '480 px',
-  left: '25px', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  mixColor: '#fbfafa', // default: '#fff'
-  backgroundColor: '#fbfafa',  // default: '#fff'
-  buttonColorDark: '#100f2c',  // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: true // default: true
-}
+// let options = {
+//   right: '0px',
+//   bottom: '1075px',
+//   // top: '480 px',
+//   left: '25px', // default: 'unset'
+//   time: '0.5s', // default: '0.3s'
+//   mixColor: '#fbfafa', // default: '#fff'
+//   backgroundColor: '#fbfafa',  // default: '#fff'
+//   buttonColorDark: '#100f2c',  // default: '#100f2c'
+//   // buttonColorLight: '#fff', // default: '#fff'
+//   // saveInCookies: false, // default: true,
+//   label: '🌓', // default: ''
+//   // autoMatchOsTheme: true // default: true
+// }
+
 
 
 function addDarkmodeWidget() {
-  // new Darkmode().showWidget();
+  new Darkmode().showWidget();
 
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
+  // const darkmode = new Darkmode(options);
+  // darkmode.showWidget();
+
 }
 window.addEventListener('load', addDarkmodeWidget);
+
 
 
 // import Darkmode from 'darkmode-js';
