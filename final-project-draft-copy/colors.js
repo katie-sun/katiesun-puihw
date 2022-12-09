@@ -14,8 +14,8 @@ window.addEventListener('load', addDarkmodeWidget);
 const options = {
   time: '0.5s', // default: '0.3s'
   label: '🌓', // default: ''
-  left: '0px',
-  bottom: '800px',
+  // left: '0px',
+  // bottom: '800px',
 }
 
 const darkmode = new Darkmode(options);
@@ -52,7 +52,6 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
 
     node.addEventListener('animationend', handleAnimationEnd, { once: true });
   });
-
 
 
 
@@ -112,6 +111,7 @@ function populateHtml() {
   })
 }
 
+//nav bar button functions
 
 //reset button
 document.getElementById("resetbutton").addEventListener('click', reset);
@@ -141,13 +141,31 @@ function reset() {
 }
 
 
+//sort by date of artwork button
+let dateBtn = document.getElementById("datebutton")
+document.getElementById("datebutton").addEventListener('click', dateReset);
+
+function dateReset() {
+  cardInfo.sort((a, b) => a.dayCounter - b.dayCounter)
+  console.log(cardInfo);
+
+  let container = document.querySelector("#colorgrid");
+  container.innerHTML = "";
+
+  cardInfo.forEach((color) => {
+    createSwatch(color);
+  });
+
+}
+
 
 //color filter button
-let filterbtn = document.getElementById("filterbutton");
+let filterBtn = document.getElementById("filterbutton");
 let targetDiv = document.getElementById("colorbuttons");
+let backgroundShadow = document.getElementById("colorfilters");
 
-filterbtn.onclick = function () {
-  if (targetDiv.style.display !== "none") {
+filterBtn.onclick = function () {
+  if (targetDiv.style.display == "flex") {
     targetDiv.style.display = "none";
   } else {
     targetDiv.style.display = "flex";
@@ -171,13 +189,13 @@ function greenButton() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
 
-  let greenswatches = cardInfo.filter(function (greens) {
+  let greenSwatches = cardInfo.filter(function (greens) {
     if (greens.group == "greens") {
       return true;
     }
   });
 
-  greenswatches.forEach((color) => {
+  greenSwatches.forEach((color) => {
     createSwatch(color);
   });
 }
@@ -187,13 +205,13 @@ function blueButton() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
 
-  let blueswatches = cardInfo.filter(function (blues) {
+  let blueSwatches = cardInfo.filter(function (blues) {
     if (blues.group == "blues") {
       return true;
     }
   });
 
-  blueswatches.forEach((color) => {
+  blueSwatches.forEach((color) => {
     createSwatch(color);
   });
 }
@@ -203,13 +221,13 @@ function redButton() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
 
-  let redswatches = cardInfo.filter(function (reds) {
+  let redSwatches = cardInfo.filter(function (reds) {
     if (reds.group == "reds") {
       return true;
     }
   });
 
-  redswatches.forEach((color) => {
+  redSwatches.forEach((color) => {
     createSwatch(color);
   });
 }
@@ -219,13 +237,13 @@ function yellowButton() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
 
-  let yellowswatches = cardInfo.filter(function (yellows) {
+  let yellowSwatches = cardInfo.filter(function (yellows) {
     if (yellows.group == "yellows") {
       return true;
     }
   });
 
-  yellowswatches.forEach((color) => {
+  yellowSwatches.forEach((color) => {
     createSwatch(color);
   });
 }
