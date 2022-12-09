@@ -1,5 +1,27 @@
 console.log('Start page.');
 
+//dark mode widget (darkmode.js)
+function addDarkmodeWidget() {
+  new Darkmode().showWidget();
+
+  // const darkmode = new Darkmode(options);
+  // darkmode.showWidget();
+
+}
+window.addEventListener('load', addDarkmodeWidget);
+
+//modify dark mode defaults
+const options = {
+  time: '0.5s', // default: '0.3s'
+  label: '🌓', // default: ''
+  left: '0px',
+  bottom: '800px',
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+
+//to create Color objects
 class Color {
   constructor(idnumber, colorID, hexCode, dayCounter, imageFile, alt) {
     this.idnumber = idnumber;
@@ -32,19 +54,14 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
   });
 
 
-// resource: https://stackoverflow.com/questions/28444457/get-id-of-element-clicked
+
 
 document.addEventListener('click', function (e) {
+  //get ID of element clicked
+  // resource: https://stackoverflow.com/questions/28444457/get-id-of-element-clicked
   let clickedItem = e.target.id;
-  // let removecontainer = document.getElementById("gradient2");
-  // let addgradient = document.createElement("img")
 
-
-  // removecontainer.removeAttribute("id");
-  // addgradient.setAttribute("id", "meshgradient");
-
-  // removecontainer.appendChild(addgradient);
-
+  //update hex code, painting, counter number, and color description on click of corresponding swatch
   for (let i = 0; i < cardInfo.length; i++) {
     if (cardInfo[i].colorID == clickedItem) {
 
@@ -52,6 +69,7 @@ document.addEventListener('click', function (e) {
       hexElement.innerHTML = cardInfo[i].hexCode;
 
       const counterElement = document.querySelector('.counternumber');
+      animateCSS('.counternumber', 'flipInX');
       counterElement.innerHTML = cardInfo[i].dayCounter;
 
       const imageElement = document.querySelector('#painting');
@@ -64,14 +82,12 @@ document.addEventListener('click', function (e) {
 
       animateCSS('#largecard', 'flipInY');
 
-      // const borderElement = document.querySelector(".colorbox");
-      // borderElement.setAttribute("id", "borderbox");
     }
   }
 }, false);
-// flipElement.classList.remove('animate__animated', 'animate__flipInY');
 
 
+//function to create color swatch cards
 function populateHtml() {
   //grab div where we're populating
   console.log('function populate html test');
@@ -96,10 +112,12 @@ function populateHtml() {
   })
 }
 
+
 //reset button
-document.getElementById("plusicon").addEventListener('click', reset);
+document.getElementById("resetbutton").addEventListener('click', reset);
 
 function reset() {
+
   const imageElement = document.querySelector("#painting");
   imageElement.classList.add("opacityhack");
   animateCSS('#largecard', 'fadeIn');
@@ -107,11 +125,13 @@ function reset() {
 
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
+  container.style.justifyContent = "space-between";
 
   const hexElement = document.querySelector('#hexcode');
   hexElement.innerHTML = "20 Colors"
 
   const counterElement = document.querySelector('.counternumber');
+  animateCSS('.counternumber', 'flipInX');
   counterElement.innerHTML = "20"
 
   const descriptorElement = document.querySelector('#colordescription');
@@ -120,20 +140,33 @@ function reset() {
   populateHtml();
 }
 
-// document.getElementsByClassName("darkmode-layer darkmode-layer--button").addEventListener('click', changesrc);
-
-function changesrc() {
-  const imageElement = document.querySelector("#plusicon");
-  imageElement.src = "./Assets/fp4/resetwhite.png";
-}
 
 
+//color filter button
+let filterbtn = document.getElementById("filterbutton");
+let targetDiv = document.getElementById("colorbuttons");
 
+filterbtn.onclick = function () {
+  if (targetDiv.style.display !== "none") {
+    targetDiv.style.display = "none";
+  } else {
+    targetDiv.style.display = "flex";
+    animateCSS('#greenbutton', 'bounceIn');
+    animateCSS('#bluebutton', 'bounceIn');
+    animateCSS('#redbutton', 'bounceIn');
+    animateCSS('#yellowbutton', 'bounceIn');
+  }
+};
+
+
+
+//filter by color family 
 document.getElementById("greenbutton").addEventListener('click', greenButton);
 document.getElementById("bluebutton").addEventListener('click', blueButton);
 document.getElementById("redbutton").addEventListener('click', redButton);
 document.getElementById("yellowbutton").addEventListener('click', yellowButton);
 
+//filter by greens
 function greenButton() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
@@ -149,6 +182,7 @@ function greenButton() {
   });
 }
 
+//filter by blues
 function blueButton() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
@@ -164,7 +198,7 @@ function blueButton() {
   });
 }
 
-
+//filter by reds
 function redButton() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
@@ -180,7 +214,7 @@ function redButton() {
   });
 }
 
-
+//filter by yellows
 function yellowButton() {
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
@@ -197,8 +231,10 @@ function yellowButton() {
 }
 
 
+//create color swatches for filter by color family function
 function createSwatch(color) {
   let container = document.querySelector("#colorgrid");
+  container.style.justifyContent = "flex-start";
 
   let colorcard = new Color(color.idnumber, color.colorID, color.hexCode, color.dayCounter, color.imageFile, color.alt)
 
@@ -212,41 +248,4 @@ function createSwatch(color) {
 
   container.appendChild(colorBox);
 }
-
-
-//modifying darkmode library
-
-// let options = {
-//   right: '0px',
-//   bottom: '1075px',
-//   // top: '480 px',
-//   left: '25px', // default: 'unset'
-//   time: '0.5s', // default: '0.3s'
-//   mixColor: '#fbfafa', // default: '#fff'
-//   backgroundColor: '#fbfafa',  // default: '#fff'
-//   buttonColorDark: '#100f2c',  // default: '#100f2c'
-//   // buttonColorLight: '#fff', // default: '#fff'
-//   // saveInCookies: false, // default: true,
-//   label: '🌓', // default: ''
-//   // autoMatchOsTheme: true // default: true
-// }
-
-
-
-function addDarkmodeWidget() {
-  new Darkmode().showWidget();
-
-  // const darkmode = new Darkmode(options);
-  // darkmode.showWidget();
-
-}
-window.addEventListener('load', addDarkmodeWidget);
-
-
-
-// import Darkmode from 'darkmode-js';
-
-// new Darkmode().showWidget();
-
-
 

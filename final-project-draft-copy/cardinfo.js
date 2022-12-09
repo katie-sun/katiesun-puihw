@@ -1,3 +1,5 @@
+//array of color card objects
+
 let cardInfo = [
   {
     idnumber: 1,
@@ -15,7 +17,7 @@ let cardInfo = [
     hexCode: '#46522E',
     dayCounter: 5,
     imageFile: "forest-pantone.jpg",
-    alt: "painting of dark green underwater kelp forest",
+    alt: "painting of dark green underwater kelp forest with small fish",
     group: 'greens'
   },
 
@@ -106,7 +108,7 @@ let cardInfo = [
     hexCode: '#ca2501',
     dayCounter: 14,
     imageFile: "ember-pantone.jpg",
-    alt: "painting of a vivid orange fire with white sparks",
+    alt: "painting of a vivid orange log fire fire by a lake with white sparks",
     group: 'reds'
   },
 
