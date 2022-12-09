@@ -11,15 +11,15 @@ function addDarkmodeWidget() {
 window.addEventListener('load', addDarkmodeWidget);
 
 //modify dark mode defaults
-const options = {
-  time: '0.5s', // default: '0.3s'
-  label: '🌓', // default: ''
-  // left: '0px',
-  // bottom: '800px',
-}
+// const options = {
+//   time: '0.5s', // default: '0.3s'
+//   label: '🌓', // default: ''
+//   // left: '0px',
+//   // bottom: '800px',
+// }
 
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
+// const darkmode = new Darkmode(options);
+// darkmode.showWidget();
 
 //to create Color objects
 class Color {
@@ -117,6 +117,7 @@ function populateHtml() {
 document.getElementById("resetbutton").addEventListener('click', reset);
 
 function reset() {
+  cardInfo.sort((a, b) => a.idnumber - b.idnumber)
 
   const imageElement = document.querySelector("#painting");
   imageElement.classList.add("opacityhack");
@@ -146,8 +147,8 @@ let dateBtn = document.getElementById("datebutton")
 document.getElementById("datebutton").addEventListener('click', dateReset);
 
 function dateReset() {
+  //resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
   cardInfo.sort((a, b) => a.dayCounter - b.dayCounter)
-  console.log(cardInfo);
 
   let container = document.querySelector("#colorgrid");
   container.innerHTML = "";
