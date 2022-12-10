@@ -191,7 +191,7 @@ h6 {
 }
 
 /* counter button */
-#counter{
+.counter{
   width: 100px;
   height: 100px;
   text-align: center;
@@ -202,7 +202,7 @@ h6 {
 
 }
 
-#counterresponsive{
+.counterresponsive{
   display: none;
   width: 100px;
   height: 100px;
@@ -448,92 +448,15 @@ h6 {
   height: 360px;
 }
 
-#headerresponsive{
-  display: none;
-}
+/* tablet size responsive*/
 
-/* responsive formatting */
-/* @media only screen and (max-width: 1024px){
-  .colorbox{
-    width: 3vh;
-    margin: .3vh;
-    flex-grow: 1;
-  }
-
-  #colorgrid{
-    justify-content: flex-start;
-  }
-
-} */
-
-
-/* @media only screen and (max-width: 1024px){
-  .colorbox{
-    width: 100%;
-    margin: .3vh;
-    flex-grow: 1.5;
-    min-width: 78.48px;
-    max-width: 89px;
-  }
-
-  #colorgrid{
-    justify-content: flex-start;
-  }
-
-}
-
-@media only screen and (max-width: 1019px){
-  .colorbox{
-    width: 18%;
-    margin: .3vh;
-    min-width: 78.4;
-    max-width: 86px;
-  }
-
-  #colorgrid{
-    justify-content: flex-start;
-  }
-
-} */
-
-
-
-
-/* mobile size responsive*/
-
-@media only screen and (max-width: 871px){
+@media only screen and (max-width: 600px){
   #verticalsplit{
     display: block;
   }
 
-  /* .verticalline{
-    display: none;
-  } */
-
-  #textheader{
-    display: none;
-  }
-
-  #headerresponsive{
-    display: block;
-    margin-top: 40px;
-  }
-
   #tabletresponsive{
     display:flex;
-  }
-
-  #tabletheaderresponsive{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  #counterresponsive{
-    display: block;
-    margin-left: 0px;
-    margin-right: auto;
-    align-content:flex-end;
   }
 
   #gallery{
@@ -606,14 +529,6 @@ h6 {
     margin-right: 10px;
   }
 
-  /* .verticalline2{
-    display: none;
-  } */
-
-  #counter{
-    display: none;
-  }
-
   #largecard{
     margin-left: 0px;
   }
@@ -655,9 +570,20 @@ h6 {
 
 }
 
-@media only screen and (max-width: 760px) {
-  #counterresponsive{
-    display: none;
+@media only screen and (max-width: 700px) {
+
+  #cardgallery{
+    flex-direction: column;
+  }
+
+  #pagemargin{
+    padding-bottom: 30px;
+  }
+
+  #colorgrid{
+    margin-top: 5px;
+    padding-top: 15px;
+    margin-bottom: 10px;
   }
 
   #gallery{
@@ -668,10 +594,6 @@ h6 {
   #headerresponsive{
     margin-top: 10px;
   }
-
-  /* #counter{
-    display: block;
-  } */
 
   #header{
     display: flex;
@@ -687,6 +609,11 @@ h6 {
 
   #pagemargin{
     margin-left: 0px;
+  }
+
+  h2{
+    font-size: 40px;
+    margin-top: 40px;
   }
 }
 
