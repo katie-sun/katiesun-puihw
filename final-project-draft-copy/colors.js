@@ -8,17 +8,6 @@ function addDarkmodeWidget() {
 }
 window.addEventListener('load', addDarkmodeWidget);
 
-//modify dark mode defaults
-// const options = {
-//   time: '0.5s', // default: '0.3s'
-//   label: '🌓', // default: ''
-//   // left: '0px',
-//   // bottom: '800px',
-// }
-
-// const darkmode = new Darkmode(options);
-// darkmode.showWidget();
-
 //to create Color objects
 class Color {
   constructor(idnumber, colorID, hexCode, dayCounter, imageFile, alt) {
