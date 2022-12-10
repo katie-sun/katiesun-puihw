@@ -1,5 +1,3 @@
-console.log('Start page.');
-
 //dark mode widget (darkmode.js)
 function addDarkmodeWidget() {
   new Darkmode().showWidget();
@@ -89,7 +87,6 @@ document.addEventListener('click', function (e) {
 //function to create color swatch cards
 function populateHtml() {
   //grab div where we're populating
-  console.log('function populate html test');
   let container = document.getElementById("colorgrid");
 
   //resource: https://www.w3schools.com/jsref/jsref_foreach.asp
